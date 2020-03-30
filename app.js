@@ -10,7 +10,8 @@ var path = require('path');
 
 //load customers route
 var customers = require('./routes/customers'); 
-var productjsfile = require('./routes/products');
+//load products route
+var products = require('./routes/products');
 
 var app = express();
 
@@ -57,7 +58,7 @@ app.use(
 
 app.get('/', routes.index);
 app.get('/customers', customers.list);
-app.get('/products', productjsfile.list);
+app.get('/products', products.list);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
