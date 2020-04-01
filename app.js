@@ -12,8 +12,14 @@ var path = require('path');
 var customers = require('./routes/customers'); 
 //load products route
 var products = require('./routes/products');
-//load products route
-//var about = require('/routes/about');
+//load about route
+var aboutjsfile = require('./routes/about');
+//load contact route
+var contactjsfile = require('./routes/contact');
+//load faq route
+var faqjsfile = require('./routes/faq');
+//load faq route
+var cpolicyjsfile = require('./routes/cpolicy');
 
 var app = express();
 
@@ -59,7 +65,15 @@ app.use(
 
 
 app.get('/', routes.index);
-//app.get('/about', routes.about);
+//get about_us url
+app.get('/about_us', aboutjsfile.about);
+//get contact_us url
+app.get('/contact_us', contactjsfile.contact);
+//get faq url
+app.get('/faq', faqjsfile.faq);
+//get cookie policy url
+app.get('/cookie_policy', cpolicyjsfile.cpolicy);
+
 app.get('/customers', customers.list);
 app.get('/products', products.list);
 app.get('/customers/add', customers.add);

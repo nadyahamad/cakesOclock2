@@ -3,7 +3,6 @@
  */
 
 exports.about = function(req, res){
-  res.render('/about', { page_title: 'about' });
-
+	res.render('about_us', {title: "About Us" });
 };
 
