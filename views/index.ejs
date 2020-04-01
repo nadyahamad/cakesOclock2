@@ -1,47 +1,129 @@
-<html>
-   
 
-    <head>
-        <title>Express HTML</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="jquery-3.4.1.min.js"></script>
-        <script>
-            <title><%=(locals.title) ? title :''%></title>
-       
-       
-        </script>
-      </head>
-
-    <body>
-    
-        <div style="margin:100px;">
-            <nav class="navbar navbar-inverse navbar-static-top">
-          <div class="container">
-            <ul class="nav navbar-nav">
-              <li class="active">
-                <a href="/">Home</a>
-              </li>
-              <li >
-                <a href="/customers">Customers</a>
-              </li>
-              <li >
-                <a href="/customers/add">Add Customers</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
-            <div class="jumbotron"  style="padding:40px;">
-            <p>  
-
-                Demo app to show how to organize module and app
-                </p>
+    <%- include layouts/header.ejs %>
+    <!-- main content -->
+    <main class="">
+        <!-- banner large & medium devices-->
+        <section>
+            <div class="banner-lg">
+                <div class="heading">
+                    <h1 class="banner-h1 text-right">
+                        Cakes O'Clock
+                    </h1>
+                    <p class="banner-text text-right">
+                        Let us show you what we can do, whether you are looking for a birthday cake, scones for the office or the family or a simple, cake, we’ll look after you!
+                    </p>
+                </div>
             </div>
-        
-          </div>
-        </body>
-    </body>
+            <!-- banner small devices -->
+            <div class="banner-sm slideshow-container">
+                <div class="mySlides1 fade">
+                    <img src="img/index/home-mobile-1.jpg" alt="cakes image" class="img">
+                </div>
+                <div class="mySlides1 fade">
+                    <img src="img/index/home-mobile-2.jpg" alt="cakes image" class="img">
+                </div>
+                <div class="mySlides1 fade">
+                    <img src="img/index/home-mobile-3.jpg" alt="cakes image" class="img">
+                </div>
+                <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+            </div>
+        </section>
+        <!-- our products section -->
+        <section>
+            <h2 class="text-center pt-1 bottom-dotted"> Our Products </h2>
+            <div class="container margin">
+                <!-- Cakes card -->
+                <div class="product-card">
+                    <img src="img/index/cakes.jpg"  class="img" alt="cake">
+                    <h3>Cakes</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <!--Brownies card -->
+                <div class="product-card">
+                    <img src="img/index/brownies.jpg"  class="img" alt="brownies">
+                    <h3>Brownies</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <!-- Cupcakes card -->
+                <div class="product-card">
+                    <img src="img/index/cupcakes.jpg"  class="img" alt="cupcakes">
+                    <h3>Cupcakes</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <!-- Cookies card -->
+                <div class="product-card">
+                    <img src="img/index/cookies.jpg"  class="img" alt="cookies">
+                    <h3>Cookies</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- testimonials -->
+        <section class="testimonials">
+            <div class="slideshow-container">
+                <h2 class="text-center pt-1 bottom-dotted"> Testimonials </h2>
+                <!-- testimonial-1 -->
+                <div class="mySlides2 fade">
+                    <div class="testimonials-box">
+                        <p class="text-justify mt-1">
+                            <em>«Chocolate bar bear claw chupa chups gummi bears topping marzipan cheesecake candy. Pie gummies pastry cookie chocolate macaroon tootsie roll powder muffin. Jujubes icing cheesecake muffin gummies pastry.! »</em>
+                        </p>
+                        <p class="quote-text text-right mt-1">
+                            <strong>
+                                — Ann O’Brien
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- testimonial-2 -->
+                <div class="mySlides2 fade">
+                    <div class="testimonials-box">
+                        <p class="text-justify mt-1">
+                            <em>«Chocolate »</em>
+                        </p>
+                        <p class="quote-text text-right mt-1">
+                            <strong>
+                                — Ahsdosd
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <!-- testimonial-3 -->
+                <div class="mySlides2 fade">
+                    <div class="testimonials-box">
+                        <p class="text-justify mt-1">
+                            <em>«Chocolate dfer »</em>
+                        </p>
+                        <p class="quote-text text-right mt-1">
+                            <strong>
+                                — Ahsdosd fg
+                            </strong>
+                        </p>
+                    </div>
+                </div>
+                <a class="prev-test" onclick="plusSlides(-1, 1)">&#10094;</a>
+                <a class="next-test" onclick="plusSlides(1, 1)">&#10095;</a>
+            </div>
+        </section>
+        <!-- our products section -->
+    </main>
+    <!-- main content -->
+    <%- include layouts/footer.ejs %>
 
-</html>

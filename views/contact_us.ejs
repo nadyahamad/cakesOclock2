@@ -1,0 +1,49 @@
+<%- include layouts/header.ejs %>
+<!-- main content -->
+<main class ="content">
+    <h1 class="h1-contact"> CONTACT US </h1>
+    <!-- MAP -->
+    
+      <div class= "map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.0993937265157!2d-6.239833584023012!3d53.35937608143615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48670e5f2131663f%3A0x554992a3b3649223!2s3%20E%20Wall%20Rd%2C%20North%20Dock%2C%20Dublin!5e0!3m2!1sen!2sie!4v1575652817534!5m2!1sen!2sie" class= "iframe"  allowfullscreen="">
+        </iframe>
+      
+        <div class= "card-address">
+            <address>
+                <p>123 North St.</p>
+                <p>East Wall</p>
+                <p>Dublin</p>
+            </address>
+        </div>
+    </div>
+    <!--Contact Form -->
+    <div class="contact-form border mb-1">
+        <form id= "contact"
+              name ="contact" 
+              action ="https://formspree.io/x19171544@student.ncirl.ie"
+              method="POST">
+      
+            <label>
+                Subject
+                <input type= "text" name ="subject" placeholder="Message subject.." class ="subject"/>
+            </label>
+    
+            <label>
+                E-mail
+                <input type= "email" name ="email" placeholder="Your email.." class ="email"/>
+            </label>
+            
+            <label>
+                Message
+                <textarea name ="message"  placeholder="Write something.." style="height:150px" class ="message"></textarea>
+            </label>
+
+            <div class="status">
+            </div>
+            <input type="submit" value="Send" class= "submit">
+     
+        </form>
+    </div>
+</main>
+<!-- main content -->
+<%- include layouts/footer.ejs %>

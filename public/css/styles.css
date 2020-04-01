@@ -1,0 +1,651 @@
+/*= GENERAL CSS 
+--------------------------------------------------------*/
+html {
+  /* line-height: 1.15; 1 */
+  -webkit-text-size-adjust: 100%; 
+}
+
+body {
+    font-family: 'Raleway', sans-serif !important;
+    color: #230D0C;
+    background-color: #fff;
+    margin: 0;
+}
+
+/* Grid-View */
+* {
+  box-sizing: border-box;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+/* Flexbox Layout to distribute the content */
+.flex-container {
+    display: flex;
+    justify-content:space-around;
+    margin: auto;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+}
+
+/* border all */
+.border{
+    border: 1px solid #000;
+}
+
+/* border bottom decorated*/
+.bottom-dotted{
+    border-bottom: 5px dotted #230D0C;
+    width: 20%;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+/* margin all */
+.margin{
+    margin: 20px;
+}
+
+/* margin auto */
+.margin-auto{
+    margin: auto;
+}
+
+/* margin top of 2% */
+.mt-1{
+    margin-top: 2%;
+}
+
+/* margin left of 2% */
+.ml-1{
+    margin-left: 2%;
+}
+
+/* margin right of 2% */
+.mr-1{
+    margin-right: 2%;
+}
+
+/* margin bottom of 2% */
+.mb-1{
+    margin-bottom: 2%;
+}
+
+/* margin top of 5% */
+.mt-2{
+    margin-top: 5%;
+}
+
+/* margin left of 5% */
+.ml-2{
+    margin-left: 5%;
+}
+
+/* margin right of 5% */
+.mr-2{
+    margin-right: 5%;
+}
+
+/* margin bottom of 5% */
+.mb-2{
+    margin-bottom: 5%;
+}
+
+/* padding all of 5%*/
+.padding-1{
+    padding: 5%;
+}
+
+/* padding top of 2% */
+.pt-1{
+    padding-top: 2%;
+}
+
+/* padding left of 2% */
+.pl-1{
+    padding-left: 2%;
+}
+
+/* padding right of 2% */
+.pr-1{
+    padding-right: 2%;
+}
+
+/* padding bottom of 2% */
+.pb-1{
+    padding-bottom: 2%;
+}
+
+/* Float Property to letf */
+.float-left{
+    float: left;
+}
+
+/* Float Property to right */
+.float-right{
+    float: right;
+}
+
+/* Text Alignment to the left */
+.text-left{
+    text-align: left;
+}
+
+/* Text Alignment to centre */
+.text-center{
+    text-align: center;
+}
+
+/* Text Alignment to the right */
+.text-right{
+    text-align: right;
+}
+
+/* Text Alignment justify */
+.text-justify{
+    text-align: justify;
+}
+
+/* Image responsive*/
+.img {
+    width: 100%;
+    height: auto;
+}
+
+/* Headings*/
+h1 { 
+    font-weight: 800;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.8rem;
+}
+
+
+
+/*= GENERAL CSS | MEDIUM/TABLETS
+--------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* Headings for medium size devices
+    h1 { 
+        font-weight: 800;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+        font-weight: 800;
+        font-size: 1.6rem;
+    }
+
+    /* border bottom decorated for medium size devices
+    .bottom-dotted{
+        border-bottom: 5px dotted #230D0C;
+        width: 80%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+ }
+------------------------- */
+
+
+/*= GENERAL CSS | SMALL/MOBILE
+--------------------------------------------------------*/
+
+@media screen and (max-width: 1023px) {
+    
+    /* Container Layout for small size devices */
+    .container {
+        display: block;
+        justify-content: center;
+        margin: auto;
+    }
+
+    /* border bottom decorated for small size devices*/
+    .bottom-dotted{
+        border-bottom: 5px dotted #230D0C;
+        width: 80%;
+        margin: auto;
+        padding-bottom: 20px;
+    }
+
+    /* parragraph style for small size devices */
+    p{
+       font-weight: 200;
+        font-size: 1.4rem; 
+    } 
+
+
+    /* Headings*/
+    h1 { 
+        font-weight: 800;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    h2{
+        text-align: center;
+        font-weight: 800;
+        font-size: 2.3rem;
+    }
+
+
+
+    h3{
+        text-align: center;
+        font-weight: 800;
+        font-size: 2rem;
+    }
+}
+
+
+/*= HEADER 
+--------------------------------------------------------*/
+/* header style */
+header {
+    text-align: center;
+    background-color: #F1EFEF;
+    color: #230D0C;
+    display: block;
+}
+
+.menu-large{
+    justify-content: space-between;
+}
+
+
+/* logo responsive*/
+.img-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    height: auto;
+}
+
+/* btn-register */
+.headbutton1 {
+    background-color: #F1EFEF;
+    border: 2px solid #ED3D3D;
+    color: #ED3D3D;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+/* btn-register-hover */
+.headbutton1:hover{
+    background-color: #AD2D2D;
+    border: 2px solid #AD2D2D;
+    color:#fff;
+    font-weight: 400;
+}
+
+/* btn-login */
+.headbutton2 {
+    background-color: #ED3D3D;
+    border: 2px solid #ED3D3D;
+    color: #FFF;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+/* btn-login-hover */
+.headbutton2:hover{
+    background-color: #AD2D2D;
+    border: 2px solid #AD2D2D;
+    color:#fff;
+    font-weight: 400;
+}
+
+/* btn-cart */
+.btn-cart {
+    background-color: #fff;
+    border: none;
+    color: #230D0C;
+    margin: 20px;
+    font-size: 2.2rem;
+    cursor: pointer;
+}
+/* btn-cart-hover */
+.btn-cart:hover {
+    color: #AD2D2D;
+}
+
+
+/*= HEADER | LARGE/DESKTOP
+--------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+
+    /*= Navigation
+    --------------------------------------------------------*/
+    /* navigation style for large size devices*/
+    nav{
+        width: 100%;
+        padding: 20px 0px;
+        text-align: center;
+        display: block;
+        background-color: #230D0C;
+    }
+
+    nav a{
+        margin-left: 20px;
+        display:inline;
+        padding: 20px;
+        color:#fff;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: 1.2rem;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover{
+        font-weight: 300;
+        background-color: #664B4B;
+    }
+
+    nav a.active{
+        font-weight: 400;
+        background-color: #ED3D3D;
+        border:1px solid #ED3D3D;
+    }
+
+    .nav-mobile{
+        display: none;
+    }
+
+}
+
+
+
+
+/*= HEADER | MEDIUM/TABLETS
+--------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* navigation style for medium size devices
+    nav a{
+        margin-left: 20px;
+        display:inline;
+        padding: 20px;
+        color:#fff;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: 1rem;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+   .nav-mobile{
+        display: none;
+    }
+
+ }
+*/
+
+/*= HEADER | SMALL/MOBILE
+--------------------------------------------------------*/
+@media screen and (max-width: 1023px) {
+    /* navigation style for small size devices */
+    .menu-large{
+        display: none;
+    }
+
+    .nav-mobile{
+        width: 100%;
+        text-align: center;
+        display: block;
+        background-color: #F1EFEF;
+        border-bottom: 10px solid #B44040;
+    }
+
+    .topnav {
+        overflow: hidden;
+        position: relative;
+  
+    }
+
+    #navLinks{
+        background: #230D0C;
+        display: none;
+    }
+
+    .topnav a {
+        padding: 15px;
+        color:#fff;
+        font-weight: 200;
+        font-size: 1.8rem;
+        text-decoration: none;
+        display: block;
+    }
+
+    .topnav a:hover{
+        font-weight: 500;
+    }
+
+    .topnav .active {
+        display: inline-block;
+        justify-content: center;
+        width: 80%;
+        padding: 15px 0px;
+        font-weight: 500;
+        border-bottom: 3px dotted #fff;
+    }
+
+    .topnav a.icon {
+        background: #230D0C;
+        display: block;
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        width: 50px;
+        height:50px;
+        border-radius: 4px;
+    }
+
+    a.icon:hover {
+        background: #664B4B;
+    }
+
+    .line-menu{
+        background: #fff;
+        width: 45px;
+        height:3px;
+        margin: 10px 0px;
+    }
+
+    /* logo style for small size devices*/
+    .img-logo {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Image responsive*/
+    .img {
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+
+/*= FOOTER | LARGE/DESKTOP
+--------------------------------------------------------*/
+/* Footer style */
+footer {
+    text-align: center;
+    background-color: #230D0C;
+    color: #fff;
+    font-weight: 200;
+}
+
+.social-media{
+    padding-bottom: 20px;
+    justify-content: center;
+    margin: auto;
+    width: 70%;
+    border-bottom: 2px dotted #fff;
+
+}
+
+/*= Navigation style for large size devices
+--------------------------------------------------------*/
+.nav-footer a{
+    margin: 0px 5px;
+    padding: 5px;
+    display:inline;
+    color:#fff;
+    text-decoration: none;
+    font-weight: 200;
+    font-size: 1.1rem;
+    font-style: italic;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.nav-footer a:hover{
+    font-weight: 500;
+    background-color: #230D0C;
+}
+
+.nav-footer a.active{
+    font-weight: 700;
+    background-color: #230D0C;
+    border: 1px dotted #FFF;
+}
+
+/*= Credits */
+.credits{
+    height: 60px;
+    display: block;
+    margin: 0px;
+    text-align: center;
+    background-color: #B44040;
+    color: #fff;
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+/*= FOOTER | LARGE/DESKTOP
+--------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+
+    .footer-h4{
+        font-weight: 500;
+        font-size: 1.4rem;
+        font-style: italic;
+    }
+
+
+}
+
+/*=  FOOTER | MEDIUM/TABLETS
+--------------------------------------------------------
+@media (min-width: 768px) and (max-width: 991px) {
+    
+    /* Footer style for medium size devices
+    .footer-h4{
+        font-weight: 500;
+        font-size: 1.2rem;
+    }
+
+ }
+*/
+
+/*=  FOOTER | SMALL/MOBILE
+--------------------------------------------------------*/
+
+@media screen and (max-width: 1023px) {
+    /*= Navigation style for small size devices
+    --------------------------------------------------------*/
+    .nav-footer a{
+        margin: 0px 5px;
+        padding: 5px;
+        display:inline;
+        color:#fff;
+        text-decoration: none;
+        font-weight: 200;
+        font-size: 1.7rem;
+        font-style: italic;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+     /* Footer style for small size devices*/
+    .footer-h4{
+        font-weight: 300;
+        font-size: 1.8rem;
+    }
+
+    .social-media{
+        padding-bottom: 20px;
+        justify-content: center;
+        margin: auto;
+        width: 100%;
+        border-bottom: 2px dotted #fff;
+    }
+
+    /*= Credits */
+    .credits{
+        height: 60px;
+        display: block;
+        margin: 0px;
+        text-align: center;
+        background-color: #B44040;
+        color: #fff;
+        font-weight: 200;
+        font-size: 1.5rem;
+    }
+}
