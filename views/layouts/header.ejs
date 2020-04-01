@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-</html>
+<html lang="en">
+
     <head>
-        <title>Contoh CRUD Node.js-MySQL</title>
-        <link href="/../css/style.css" rel="stylesheet">
-        <script type="text/javascript" src="/../js/all.js"></script>
+        <title>Cakes O'Clock</title>
+        <meta charset="utf-8" />
+        <!-- Style sheets -->
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles-index.css"/>
+        <link rel="stylesheet" type="text/css" href="css/styles-products.css" />
+        <link rel="stylesheet" type="text/css" href="css/stylesaboutus.css"/>
+        <link rel="stylesheet" type="text/css" href="css/stylescontactus.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles-faq.css"/>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+        <!-- Add icon library -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    
     <body>
-        <div id="wrapper">
-            <div class="page-header"><h2><%=page_title%></h2></div>
-            <div class="page-container">
+    <!-- header -->
+    <header class="">
+        <!-- navigation large & medium devices -->
+        <div class="menu-large card-container">
+        	<!-- logo -->
+	        <div class="col-3">
+	            <a class="" href="/" >
+	                <img src="img/index/Cakes-O'clock-logo.png" alt="Cakes O'clock logo" class="img-logo">
+	            </a>
+	        </div>
+	        <!-- register, login and cart  -->
+	        <div class="col-4 right mt-1">
+	        	<!-- register btn -->
+	        	<button class="headbutton1 mr-1" type="button" onclick="location.href='register.html'">
+	        		REGISTER
+	        	</button>
+	        	<!-- Login btn -->
+	        	<button id="headerLoginButton mr-1" class="headbutton2" type="button"> 
+	        		LOGIN
+	        	</button>
+	        	<!-- cart btn -->
+	        	<button class="btn-cart">
+	        		<i class="fa fa-shopping-cart"></i>
+	        	</button>
+	        </div>
+            <!-- navigation links -->
+            <nav class="menu-large mt-1">
+                <a href="/" class="">HOME</a>
+                <a href="/about" class=" ">ABOUT US</a>
+                <a href="/products" class=" ">PRODUCTS</a>
+                <a href="./contact_us" class=" ">CONTACT</a>
+            </nav>
+        </div>
+        <!-- navigation large & medium devices -->
+        <!-- navigation small devices -->
+        <div class="nav-mobile">
+            <!-- top navigation -->
+            <div class="topnav">
+                <!-- logo -->
+                <a href="./index.html" class="">
+                    <img src="img/index/mobile-logo.png" alt="Cakes O'clock logo" class="img-logo">
+                </a>
+                <!-- navigation links -->
+                <div id="navLinks">
+                    <a href="/" class="active">HOME</a>
+                    <a href="/about" class=" ">ABOUT US</a>
+                    <a href="/products" class=" ">PRODUCTS</a>
+                    <a href="/contact_us" class=" ">CONTACT</a>
+                </div>
+                <!-- hamburger menu icon -->
+                <a href="javascript:void(0);" class="icon" onclick="mobileMenu()">
+                    <div class="line-menu"></div>
+                    <div class="line-menu"></div>
+                    <div class="line-menu"></div>
+                </a>
+            </div>
+        </div>
+        <!-- navigation small devices -->
+    </header>
+    <!-- header -->
+    </body>
+
+</html>

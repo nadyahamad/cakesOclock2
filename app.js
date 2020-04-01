@@ -12,6 +12,8 @@ var path = require('path');
 var customers = require('./routes/customers'); 
 //load products route
 var products = require('./routes/products');
+//load products route
+//var about = require('/routes/about');
 
 var app = express();
 
@@ -57,6 +59,7 @@ app.use(
 
 
 app.get('/', routes.index);
+//app.get('/about', routes.about);
 app.get('/customers', customers.list);
 app.get('/products', products.list);
 app.get('/customers/add', customers.add);

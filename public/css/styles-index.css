@@ -1,0 +1,356 @@
+
+/*= HOME - CONTENT| LARGE/DESKTOP
+--------------------------------------------------------*/
+
+ /* Alert message box 
+ --------------------------------------------------------*/
+.cookies-alert {
+    padding: 20px;
+    background-color: #a43b3b; 
+    color: #FFF;
+}
+
+/* The close button */
+.closebtn {
+    margin-left: 15px;
+    color: #FFF;
+    font-weight: 400;
+    font-size: 1.5rem;
+    float: right;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closebtn:hover {
+    color: #230D0C;
+} 
+
+
+/* Content distribution for Home Page */
+main{
+    display: block;
+}
+
+/* banner style for large size devices
+ --------------------------------------------------------*/
+.banner-lg{
+    background: url('../img/index/home-2.jpg') 50% 50%  no-repeat fixed;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    padding-top: 40px;
+}
+
+/* heading style for Home Page Banner large size devices*/
+.heading{
+    position: absolute;
+    right: 100px;
+    width: 40%;
+}
+
+.banner-h1{
+    font-weight: 800;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.banner-text{
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.5;
+    color: #fff;
+    border-top: 5px dotted #fff;
+    border-bottom: 5px dotted #fff;
+    padding: 20px 0px;
+    text-shadow: 1px 1px 3px #230D0C;
+}
+
+/*  Hidden banner style for small size devices*/
+.banner-sm{
+    display: none;
+}
+
+/* Carousel for testimonials
+-------------------------------------------------*/
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev-test, .next-test {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -5px;
+    color: #FFF;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: #230D0C;
+}
+
+/* Position the "next button" to the right */
+.next-test {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev-test:hover, .next-test:hover {
+    background-color: #F1EFEF;
+    color: #230D0C;
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+
+/* products box style */
+.product-card{
+    display: inline-block;
+    width: 20%;
+    background-color: #F1EFEF;
+    border-radius: 4px;
+    border:.5px solid #C7BFBF;
+    box-shadow: 2px 2px 2px #675151;
+    margin: 20px 10px;
+    text-align: center;
+}
+
+/* button style */
+a.btn-secondary{
+    background-color: #230D0C;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px 25px;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 1px 1px 2px #675151;
+}
+
+a.btn-secondary:hover{
+    background-color: #664B4B;
+    color:#fff;
+    font-weight: 500;
+}
+
+/* testimonials style */
+.testimonials{
+    width: 100%;
+    height: 500px;
+    background-color: #F1EFEF;
+}
+
+.testimonials-box{
+    width: 50%;
+    margin: 20px auto;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 2;
+
+}
+
+.quote-text{
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ED3D3D;
+}
+
+
+/*=  HOME - CONTENT| MEDIUM/TABLETS
+--------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+    /* banner style for medium size devices
+    --------------------------------------------------------
+    .banner-lg{
+        background: url('../img/index/home-2.jpg') 50% 50%  no-repeat fixed;
+        width: 100%;
+        height: 400px;
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    .banner-h1{
+        font-weight: 800;
+        font-size: 2.5rem;
+        color: #fff;
+    }
+
+    .banner-text{
+        font-weight: 400;
+        font-size: 1.2rem;
+        font-style: italic;
+        line-height: 1.5;
+        color: #fff;
+        border-top: 3px dotted #fff;
+        border-bottom: 3px dotted #fff;
+        padding: 20px 0px;
+        text-shadow: 1px 1px 3px #230D0C;
+    }
+
+
+    /* products box style
+        .product-card{
+        display: inline-block;
+        width: 20%;
+        background-color: #F1EFEF;
+        border-radius: 4px;
+        border:.5px solid #C7BFBF;
+        box-shadow: 2px 2px 2px #675151;
+        margin: 20px 10px;
+        text-align: center;
+    }
+
+
+ }
+--------------------------------------------------------*/
+
+/*=  HOME - CONTENT | SMALL/MOBILE
+--------------------------------------------------------*/
+
+@media screen and (max-width: 1023px){
+
+    /* Alert message box 
+     --------------------------------------------------------*/
+    .cookies-alert {
+        padding: 30px;
+        background-color: #a43b3b; 
+        color: #FFF;
+    }
+
+    /* The close button */
+    .closebtn {
+        margin-left: 15px;
+        color: #FFF;
+        font-weight: 400;
+        font-size: 5rem;
+        float: right;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+
+    /* banner style for small size devices
+    --------------------------------------------------------*/
+    .banner-lg{
+        display: none;
+    }
+
+    .banner-sm{
+        display: block;
+        width: 100%;
+    }
+
+    /* products box style */
+    .product-card{
+        width: 80%;
+        background-color: #F1EFEF;
+        border-radius: 4px;
+        border:.5px solid #C7BFBF;
+        box-shadow: 2px 2px 2px #675151;
+        margin: 10%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    /* Carousel for banner mobile
+    -------------------------------------------------*/
+    /* Next & previous buttons */
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 50px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a grey background color */
+    .prev:hover, .next:hover {
+        background-color: #f1f1f1;
+        color: #230D0C;
+    }
+
+    .testimonials-box{
+        width: 70%;
+        margin: 20px auto;
+        font-weight: 300;
+        font-size: 1.8rem;
+        line-height: 2;
+
+    }
+
+    .testimonials{
+        width: 100%;
+        height: 400px;
+        background-color: #F1EFEF;
+    }
+
+
+    /* button style */
+    a.btn-secondary{
+        background-color: #230D0C;
+        color: #fff;
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 0px;
+        padding: 10px 25px;
+        border-radius: 2px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 1px 1px 2px #675151;
+    }
+
+    a.btn-secondary:hover{
+        background-color: #664B4B;
+        color:#fff;
+        font-weight: 500;
+    }
+
+}

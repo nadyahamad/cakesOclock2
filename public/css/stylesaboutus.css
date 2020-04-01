@@ -1,0 +1,99 @@
+/*= ABOUT US - CONTENT| LARGE/DESKTOP
+--------------------------------------------------------*/
+@media screen and (min-width: 1024px) {
+  * {
+    box-sizing: border-box;
+  }
+}
+
+html,
+body {
+  font-family: 'Raleway', sans-serif;
+  color: #000000;
+  background-color: #F1EFEF;
+  display: block;
+}
+
+
+.title {font-weight: 800;
+      font-size: 2.5rem;
+      color: #000000;
+      text-align:center;
+      font-family: 'Lobster Two', cursive;
+      border: 3px ;}
+
+ /* Column container */
+.content {
+  display: inline-block;
+  background-color: #fff;
+  }
+
+/* Two unequal columns that sit next to each other */
+
+/* Sidebar/left column */
+.column1 {
+  width: 40%; /* Set the width of the sidebar */
+  float:left;
+  padding: 20px; /* Some padding */
+  }
+
+  /* image settings */
+.img-about {
+  display:block;
+  width: 100%;
+  padding: 1px;
+  height: 100%;
+  margin-top: 10px;
+  }
+
+/* Main column -Right */
+.column2 {
+  width: 50%; /* Set the width of the main content */
+  float: right;
+  margin-bottom:  80px;
+  padding: 20px; /* Some padding */
+  margin-right:70px;
+  }
+
+p.about-us-text {
+  font-style: sans-serif;
+  line-height: 1.5;
+  color: #000000;
+  border-top: 3px dotted #000000;
+  border-bottom: 6px dotted #000000;
+  padding: 20px 0px;
+  }
+
+/*=  ABOUT US - CONTENT | SMALL/MOBILE
+--------------------------------------------------------*/
+
+@media screen and (max-width: 1023px) {
+
+/* Sidebar/left column */
+.column1 {
+  width: 80%; /* Set the width of the sidebar */
+  float: none;
+  margin: auto;
+  display:block;
+  padding: 20px; /* Some padding */
+  }
+
+/* Main column -Right */
+.column2 {
+  width: 80%; /* Set the width of the main content */
+  float: auto;
+  margin-bottom:  80px;
+  padding: 20px; /* Some padding */
+  margin-right:70px;
+  }
+
+  /* image settings */
+.img-about {
+  display:block;
+  width: 100%;
+  padding: 1px;
+  height: 100%;
+  margin-top: auto;
+  }
+
+}
