@@ -2,17 +2,18 @@
 
         <div class="page-data">
          <div class="data-btn">
-           <button onClick="addUser();">+ Add</button>
+           <button onClick="addProduct();">+ Add</button>
          </div>
          <div class="data-table">
             <table border="1" cellpadding="7" cellspacing="7">
                 <tr>
                     <h1> PRODUCTS</h1>
-                    <th width="50px">No</th>
+                    <th width="50px">Id</th>
                     <th>Name</th>
-                    <th>Address</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>allergen_info</th>
                     <th width="120px">Action</th>
                 </tr>
                                
@@ -23,15 +24,15 @@
                 <tr>
                     <td><%=(i+1)%></td>
                     <td><%=data[i].name%></td>
-                    <td><%=data[i].address%></td>
-                    <td><%=data[i].phone%></td>
-                    <td><%=data[i].email%></td>
-               <!--     <td>
+                    <td><%=data[i].description%></td>
+                    <td><%=data[i].price%></td>
+                    <td><%=data[i].category%></td>
+                    <td><%=data[i].allergen_info%></td>
+                  <td>
                         <a class="a-inside edit" href="../products/edit/<%=data[i].id%>">Edit</a>
-                       
                         <a class="a-inside delete" href="../products/delete/<%=data[i].id%>">Delete</a>
                        
-                    </td>-->
+                    </td>
                 </tr>
             <% }
             
@@ -46,5 +47,195 @@
             </table>
          </div>
         </div>
+
         
+     <!-- main content -->
+    <main class="container">
+        <!-- products large devices-->
+        <div class="submenu">
+            <button class="tablinks" onclick="openProduct(event, 'Cakes')" id="defaultOpen">
+                Cakes
+            </button>
+            <button class="tablinks" onclick="openProduct(event, 'Brownies')">      Brownies
+            </button>
+            <button class="tablinks" onclick="openProduct(event, 'Cupcakes')">      Cupcakes
+            </button>
+            <button class="tablinks" onclick="openProduct(event, 'Cookies')">      Cookies
+            </button>
+        </div>
+        <section id="Cakes" class="tabcontent">
+            <h1 class="bottom-dotted text-center">Cakes</h1>
+            <div class="card-container">
+                <div class="category-card">
+                    <img src="img/products/choco_cake.jpg"  class="img" alt="chocolate cake">
+                    <h2>Chocolate Cake</h2>
+                    <p class="text-justify pl-1 pr-1">Moist chocolate sponge covered in real 55% Belgium Chocolate.</p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Sulphites</p>
+                    <h3 class="price-text">From €25</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/tiramisu_cake.jpg"  class="img" alt="tiramisu cake">
+                    <h2>Tiramisu Cake</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        It is  made of ladyfingers dipped-in coffee, layered with a whipped mixture of egg, sugar, and mascarpone cheese, flavoured with cocoa.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Sulphites</p>
+                    <h3 class="price-text">From €20</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/cheese_cake.jpg"  class="img" alt="cheese cake">
+                    <h2>Cheese Cake</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        Can be prepared in many flavors, suchas: strawberry, pumpkin, keylime, chestnut, or toffee.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €25</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/lemon_cake.jpg"  class="img" alt="lemon cake">
+                    <h2>Lemon Cake</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        A combination of flour, sugar, eggs, lemon zest and butter.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk</p>
+                    <h3 class="price-text">From €20</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/berry_cake.jpg"  class="img" alt="berry cake">
+                    <h2>Berrys Cake</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        A combination of flour, sugar, eggs, butter and berries.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk</p>
+                    <h3 class="price-text">From €20</h3>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Brownies" class="tabcontent">
+            <h1 class="bottom-dotted text-center">Brownies</h1>
+            <div class="card-container">
+                <div class="category-card">
+                    <img src="img/products/almond_brownies.jpg"  class="img" alt="almond cake">
+                    <h2>Almond Brownies</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        Contains less butter and more flour, almonds and chocolate.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €15 - €30</h3>
+                    <p class="text-center"> 4, 8, 12 & 24 units</p>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/fudgy_brownies.jpg"  class="img" alt="fudgy brownies.jpg">
+                    <h2>Fudgy Brownies</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        Melting the butter rather than creaming it with sugar yields a denser, fudgier outcome.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €15 - €30</h3>
+                    <p class="text-center"> 4, 8, 12 & 24 units</p>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+                <div class="category-card">
+                    <img src="img/products/blondie_brownies.jpg"  class="img" alt="blondie brownies.jpg">
+                    <h2>Blondie Brownies</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        Blondies are really butterscotch bars, made with brown sugar, butter, and eggs and usually nuts, but no chocolate.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €15 - €30</h3>
+                    <p class="text-center"> 4, 8, 12 & 24 units</p>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>               
+            </div>
+        </section>
+        <section id="Cupcakes" class="tabcontent">
+            <h1 class="bottom-dotted text-center">Cupcakes</h1>
+            <div class="card-container">
+                <div class="category-card">
+                    <img src="img/products/fruit-merenge_cupcake.jpg"  class="img" alt="fruit-merenge cupcakes">
+                    <h2>Fruit-Menrengue Cupcakes</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        A small cake designed to serve of small portions.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €15 - €30</h3>
+                    <p class="text-center"> 4, 8, 12 & 24 units</p>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="Cookies" class="tabcontent">
+            <h1 class="bottom-dotted text-center">Cookies</h1>
+            <div class="card-container">
+                <div class="category-card">
+                    <img src="img/products/fruit-merenge_cupcake.jpg"  class="img" alt="fruit-merenge cupcakes">
+                    <h2>Fruit-Menrengue Cupcakes</h2>
+                    <p class="text-justify pl-1 pr-1">
+                        A small cake designed to serve of small portions.
+                    </p>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Cheese</p>
+                    <h3 class="price-text">From €15 - €30</h3>
+                    <p class="text-center"> 4, 8, 12 & 24 units</p>
+                    <div class="mb-1" >
+                        <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
+                            SELECT
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- main content -->   
 <%- include layouts/footer.ejs %>
