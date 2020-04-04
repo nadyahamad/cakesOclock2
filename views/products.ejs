@@ -4,6 +4,7 @@
          <div class="data-btn">
            <button onClick="addProduct();">+ Add</button>
          </div>
+         
          <div class="data-table">
             <table border="1" cellpadding="7" cellspacing="7">
                 <tr>
@@ -17,10 +18,8 @@
                     <th width="120px">Action</th>
                 </tr>
                                
-                <% if(data.length){ 
-                                
+                <% if(data.length){             
                  for(var i = 0;i < data.length;i++) { %>
-                 
                 <tr>
                     <td><%=(i+1)%></td>
                     <td><%=data[i].name%></td>
@@ -28,27 +27,20 @@
                     <td><%=data[i].price%></td>
                     <td><%=data[i].category%></td>
                     <td><%=data[i].allergen_info%></td>
-                  <td>
+                    <td>
                         <a class="a-inside edit" href="../products/edit/<%=data[i].id%>">Edit</a>
                         <a class="a-inside delete" href="../products/delete/<%=data[i].id%>">Delete</a>
-                       
                     </td>
                 </tr>
-            <% }
-            
-             }else{ %>
-                 <tr>
-                    <td colspan="3">No user</td>
-                 </tr>
-            <% } %>
-                
-                              
-                
+                 <% }
+                    }else{ %>
+                         <tr>  <td colspan="3">No user</td> </tr>
+                <% } %>
             </table>
          </div>
         </div>
 
-        
+
      <!-- main content -->
     <main class="container">
         <!-- products large devices-->
