@@ -1,6 +1,40 @@
-<%- include layouts/header.ejs %>
-
-    <!-- main content -->
+<!DOCTYPE html>
+<html lang="en">
+<html>
+  <head>
+    <title>Cakes O'Clock - E-Shop</title>
+    <!-- Style sheets -->
+    <link rel="stylesheet" type="text/css" href="css/styles1.css" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="flex-container">
+		<figure class="">
+            <a class="" href="" >
+                <img src="img/index/Cakes-O'clock-logo.png" alt="Cakes O'clock logo" class="">
+            </a>
+        </figure>
+		<form class="search">
+			<input type="text" name="search" placeholder="Search..">
+		</form>
+		<div class="login">
+			<a href="" target="" class="btn-primary" role="button" aria-pressed="true">
+               LOGIN
+            </a>
+	    </div>
+        <div class="shop-icon">
+        	<a class="" href="" >
+            	<img src="img/index/Shop.png" alt="shopping cart" class="">
+        	</a>
+    	</div>
+    </header>
+    <nav class="">
+      	<a href="#">CAKES</a>
+      	<a href="#">BROWNIES</a>
+      	<a href="#">CUPCAKES</a>
+      	<a href="#">COOKIES</a>
+    </nav>
     <main class="">
         <h1 class="tex-center"> Checkout </h1>
         <section class="container mb-1">
@@ -13,7 +47,7 @@
                 <tr>
                     <td class="flex-container">
                         <div class="img-table">
-                            <img src="img/products/choco_cake.jpg"  class="img" alt="cake">
+                            <img src="img/items/choco_cake.jpg"  class="img" alt="cake">
                         </div>
                         <div class="description-table">
                             <h2 class="text-left">Chocolate Cake</h2>
@@ -36,7 +70,7 @@
                 <tr>
                     <td class="flex-container">
                         <div class="img-table">
-                            <img src="img/products/choco_cake.jpg"  class="img" alt="cake">
+                            <img src="img/items/choco_cake.jpg"  class="img" alt="cake">
                         </div>
                         <div class="description-table">
                             <h2 class="text-left">Chocolate Cake</h2>
@@ -59,7 +93,7 @@
             </table>
             <div class="payment-box">
                 <div class="payment-card">
-                    <h2 class="text-center product-name mb-1 pb-1">Choose Pick Up Location</h2>
+                    <h2 class="text-center product-name mb-1 pb-1">Choose Location</h2>
                     <form action="/action_page.php">
                         <select name="location" class="mt-1">
                             <option value="location1">location1</option>
@@ -91,4 +125,26 @@
         </section>
     </main>
 
-   <%- include layouts/footer.ejs %>
+    <footer>
+    	<h4 class="footer-h4">Follow us on</h4>
+    	<div class="container social-media">
+			<div class="pr-1">
+				<a href="" target="" >
+    				<img src="img/index/fb.png" alt="facebook" class="img"/>
+    			</a>
+			</div>
+    		<div class="pr-1">
+    			<a href="" target="" >
+    				<img src="img/index/instagram.png" alt="instagram" class="img"/>
+    			</a>
+    		</div>
+    		<div class="pr-1">
+    			<a href="" target="">
+    				<img src="img/index/twitter.png" alt="twitter" class="img"/>
+    			</a>
+    		</div>
+    	</div>
+        <p>® 2019 Cakes O'clock Shop. All rights are reserved.</p>
+    </footer>
+  </body>
+</html>
