@@ -22,6 +22,9 @@ var faqjsfile = require('./routes/faq');
 var cpolicyjsfile = require('./routes/cpolicy');
 //load checkout route
 var checkoutjsfile  = require('./routes/checkout');
+//load location route
+var locationjsfile  = require('./routes/location');
+
 
 var app = express();
 
@@ -86,6 +89,7 @@ app.post('/customers/edit/:id',customers.save_edit);
 
 //get checkout url
 app.get('/checkout', checkoutjsfile.checkout);
+app.get('/location', locationjsfile.location);
 
 app.use(app.router);
 
