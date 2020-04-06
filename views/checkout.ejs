@@ -1,0 +1,94 @@
+<%- include layouts/header.ejs %>
+  
+    <!-- main content -->
+    <main class="">
+        <h1 class="tex-center"> Checkout </h1>
+        <section class="container mb-1">
+            <table id="checkout-products">
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td class="flex-container">
+                        <div class="img-table">
+                            <img src="img/items/choco_cake.jpg"  class="img" alt="cake">
+                        </div>
+                        <div class="description-table">
+                            <h2 class="text-left">Chocolate Cake</h2>
+                            <h3> Allergen Information:</h3>
+                            <p class="text-justify">  Gluten (Wheat), Eggs, Milk, Sulphites</p>
+                            <p class="text-justify"> 8 - 10 portions</p>
+                            <a href="" class="mt-1">Remove from Cart</a>
+                        </div>
+                    </td>
+                    <td>
+                        <form class="pl-3">
+                            <input type="number" name="quantity" min="1" max="100" class="quantity-input">
+                            <a href="" class="mt-1">Decrease</a>
+                        </form>
+                    </td>
+                    <td>
+                        <h4 class="text-center">€20</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="flex-container">
+                        <div class="img-table">
+                            <img src="img/items/choco_cake.jpg"  class="img" alt="cake">
+                        </div>
+                        <div class="description-table">
+                            <h2 class="text-left">Chocolate Cake</h2>
+                            <h3> Allergen Information:</h3>
+                            <p class="text-justify">  Gluten (Wheat), Eggs, Milk, Sulphites</p>
+                            <p class="text-justify"> 8 - 10 portions</p>
+                            <a href="" class="mt-1">Remove from Cart</a>
+                        </div>
+                    </td>
+                    <td>
+                        <form class="pl-3">
+                            <input type="number" name="quantity" min="1" max="100" class="quantity-input">
+                            <a href="" class="mt-1">Decrease</a>
+                        </form>
+                    </td>
+                    <td>
+                        <h3 class="text-center">€20</h3>
+                    </td>
+                </tr>
+            </table>
+            <div class="payment-box">
+                <div class="payment-card">
+                    <h2 class="text-center product-name mb-1 pb-1">Choose Location</h2>
+                    <form action="/action_page.php">
+                        <select name="location" class="mt-1">
+                            <option value="location1">location1</option>
+                            <option value="location2">location2</option>
+                            <option value="location3">location3</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="payment-card mt-2">
+                    <h2 class="text-center product-name mb-1 pb-1">Cart Total</h2>
+                    <h3 class="price-text mb-1">€20</h3>
+                    <a href="" target="" class="btn-large mb-2" role="button" aria-pressed="true">
+                        CHECKOUT
+                    </a>   
+                </div>
+            </div>
+        </section>
+        <section class="container mb-1">
+            <div class="mr-1">
+                <a href="" target="" class="btn-primary" role="button" aria-pressed="true">
+                    CONTINUE SHOPPING
+                </a>
+            </div>
+            <div class="mr-1">
+                <a href="" target="" class="btn-secondary" role="button" aria-pressed="true">
+                    EMPTY CART
+                </a>
+            </div>  
+        </section>
+    </main>
+
+   <%- include layouts/footer.ejs %>
