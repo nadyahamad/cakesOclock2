@@ -7,9 +7,9 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-
+var methodOverride = require('method-override')
 //load customers route
-var customers = require('./routes/customers'); 
+var customers = require('./routes/customers');
 //load products route
 var products = require('./routes/products');
 //load about route
@@ -28,7 +28,7 @@ var locationjsfile  = require('./routes/location');
 
 var app = express();
 
-var connection  = require('express-myconnection'); 
+var connection  = require('express-myconnection');
 var mysql = require('mysql');
 
 // all environments
@@ -39,7 +39,7 @@ app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(methodOverride());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -50,20 +50,20 @@ if ('development' == app.get('env')) {
 
 /*------------------------------------------
     connection peer, register as middleware
-    type koneksi : single,pool and request 
+    type koneksi : single,pool and request
 -------------------------------------------*/
 
 app.use(
-    
+
     connection(mysql,{
-        
+
         host:"cakesdb1.cvnkqaqbljxc.us-east-1.rds.amazonaws.com",
         user: 'admin',
         password : 'Ireland1',
-        port : 3306, 
+        port : 3306,
         database : "cakesOclockSch", //schemaName
 
-    },'pool') 
+    },'pool')
 
 );
 

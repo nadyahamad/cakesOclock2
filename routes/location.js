@@ -2,26 +2,28 @@
  * GET shops listing.
  */
 
-exports.location = function(request, response){
-    
-    console.log('get method locations');
-       
-    let query = "SELECT id,shop_location FROM shops";
-               
-   shop_list ={location}
-   db.query(select_query , (error, result)=>{
-    if (error) {
 
-       response.sendStatus(500).send(error);
-    }
-       
-    result.forEach (record => {
-      shop_list[shop.id]  =   shop.location
-    })
-     response.json(shop_list);
-  });
-
-};
+exports.location = function(req, res){
 
 
+  req.getConnection(function(err,connection){
 
+        var query = connection.query('SELECT id, shop_location FROM shops',function(err,rows)
+        {
+
+            if(err)
+                console.log("Error Selecting : %s ",err );
+
+                shop_list ={}
+
+              rows.forEach (record => {
+                  shop_list[record.id]  =   record.shop_location
+                })
+                 res.json(shop_list);
+              });
+
+
+         });
+
+         //console.log(query.sql);
+    };
