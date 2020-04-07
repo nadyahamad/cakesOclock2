@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+
 var methodOverride = require('method-override')
 //load customers route
 var customers = require('./routes/customers');
@@ -25,9 +26,10 @@ var checkoutjsfile  = require('./routes/checkout');
 //load location route
 var locationjsfile  = require('./routes/location');
 
-
 //load register route
 var registerjsfile = require('./routes/register');
+
+
 
 var app = express();
 
@@ -73,8 +75,12 @@ app.use(
 
 
 app.get('/', routes.index);
-//get about_us url
+//get register url
 app.get('/register', registerjsfile.register);
+
+//get login url
+app.get('/login', registerjsfile.login);
+
 //get about_us url
 app.get('/about_us', aboutjsfile.about);
 //get contact_us url

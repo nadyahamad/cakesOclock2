@@ -69,7 +69,7 @@ body {
 /* border bottom decorated*/
 .bottom-dotted{
     border-bottom: 5px dotted #230D0C;
-    width: 20%;
+    width: 60%;
     margin: auto;
     padding-bottom: 20px;
 }
