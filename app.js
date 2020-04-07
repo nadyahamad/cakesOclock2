@@ -18,8 +18,11 @@ var aboutjsfile = require('./routes/about');
 var contactjsfile = require('./routes/contact');
 //load faq route
 var faqjsfile = require('./routes/faq');
-//load faq route
+//load cpolicy route
 var cpolicyjsfile = require('./routes/cpolicy');
+
+//load register route
+var registerjsfile = require('./routes/register');
 
 var app = express();
 
@@ -65,6 +68,8 @@ app.use(
 
 
 app.get('/', routes.index);
+//get about_us url
+app.get('/register', registerjsfile.register);
 //get about_us url
 app.get('/about_us', aboutjsfile.about);
 //get contact_us url
