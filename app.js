@@ -7,9 +7,9 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
-
+var methodOverride = require('method-override')
 //load customers route
-var customers = require('./routes/customers'); 
+var customers = require('./routes/customers');
 //load products route
 var products = require('./routes/products');
 //load about route
@@ -20,13 +20,18 @@ var contactjsfile = require('./routes/contact');
 var faqjsfile = require('./routes/faq');
 //load cpolicy route
 var cpolicyjsfile = require('./routes/cpolicy');
+//load checkout route
+var checkoutjsfile  = require('./routes/checkout');
+//load location route
+var locationjsfile  = require('./routes/location');
+
 
 //load register route
 var registerjsfile = require('./routes/register');
 
 var app = express();
 
-var connection  = require('express-myconnection'); 
+var connection  = require('express-myconnection');
 var mysql = require('mysql');
 
 // all environments
@@ -37,7 +42,7 @@ app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
-app.use(express.methodOverride());
+app.use(methodOverride());
 
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -48,20 +53,20 @@ if ('development' == app.get('env')) {
 
 /*------------------------------------------
     connection peer, register as middleware
-    type koneksi : single,pool and request 
+    type koneksi : single,pool and request
 -------------------------------------------*/
 
 app.use(
-    
+
     connection(mysql,{
-        
+
         host:"cakesdb1.cvnkqaqbljxc.us-east-1.rds.amazonaws.com",
         user: 'admin',
         password : 'Ireland1',
-        port : 3306, 
+        port : 3306,
         database : "cakesOclockSch", //schemaName
 
-    },'pool') 
+    },'pool')
 
 );
 
@@ -87,6 +92,9 @@ app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
 
+//get checkout url
+app.get('/checkout', checkoutjsfile.checkout);
+app.get('/location', locationjsfile.location);
 
 app.use(app.router);
 
