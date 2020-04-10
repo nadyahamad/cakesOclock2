@@ -1,0 +1,28 @@
+<%- include layouts/header.ejs %>
+<!-- main content -->
+<main class="register">
+    <section class="form-card">
+        <h1 class="tex-center"> Log in  </h1>
+        <p class="text-center bottom-dotted" >Don't have an account?  
+            <a href="/register" class="login"> Register here</a>
+        </p>
+        <p class="text-left ml-2"> Please enter your details </p>
+        <form method="POST" action='/login'>
+            <div class="padding-1">
+                <label>Email</label>
+                <input type= "email" name ="email" placeholder="Email" class ="form-inputs"/>
+            </div>
+            <div class="padding-1">
+                <label>Password</label>
+                <input type= "password" name ="password" placeholder="Password" class ="form-inputs" autocomplete required/>
+            </div>
+            <div class="padding-1 container">
+                <button onClick="addUser();" class="btn-large-secondary"> 
+                    LOGIN 
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+<!-- main content -->
+<%- include layouts/footer.ejs %>

@@ -1,0 +1,44 @@
+<%- include layouts/header.ejs %>
+<!-- main content -->
+<main class="register">
+    <section class="form-card">
+        <h1 class="tex-center"> Create an Account </h1>
+        <p class="text-center bottom-dotted" >Already have an account? 
+            <a href="/login" class="login"> Log in</a>
+        </p>
+        <p class="text-left ml-2"> Please enter your details </p>
+        <form method="POST" action='/register'>
+            <div class="padding-1">
+                <label>First Name</label>
+                <input type= "text" name ="first-name" placeholder="First Name" class ="form-inputs"/>
+            </div>
+            <div class="padding-1">
+                <label>Last Name</label>
+                <input type= "text" name ="last-name" placeholder="Last Name" class ="form-inputs"/>
+            </div>
+            <div class="padding-1">
+                <label>Email</label>
+                <input type= "email" name ="pmail" placeholder="Email" class ="form-inputs"/>
+            </div>
+            <div class="padding-1">
+                <label>Password</label>
+                <input type= "password" name ="password" placeholder="Password" class ="form-inputs" autocomplete required/>
+            </div>
+            <div class="padding-1">
+                <label>Confirm Password</label>
+                <input type= "password" name ="confirm-password" placeholder="Password" class ="form-inputs" autocomplete required/>
+            </div>
+            <div class="padding-1">
+                <label>Phone</label>
+                <input type= "text" name ="Address" placeholder="Address" class ="form-inputs"/>
+            </div>
+            <div class="padding-1 container">
+                <button onClick="addUser();" class="btn-large-secondary"> 
+                    CREATE AN ACCOUNT 
+                </button>
+            </div>
+        </form>
+    </section>
+</main>
+<!-- main content -->
+<%- include layouts/footer.ejs %>
