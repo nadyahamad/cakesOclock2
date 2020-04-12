@@ -21,8 +21,8 @@ var contactjsfile = require('./routes/contact');
 var faqjsfile = require('./routes/faq');
 //load cpolicy route
 var cpolicyjsfile = require('./routes/cpolicy');
-//load checkout route
-var checkoutjsfile  = require('./routes/checkout');
+//load cart route
+var cartjsfile  = require('./routes/cart');
 //load location route
 var locationjsfile  = require('./routes/location');
 
@@ -98,8 +98,8 @@ app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
 
-//get checkout url
-app.get('/checkout', checkoutjsfile.checkout);
+//get cart url
+app.get('/cart', cartjsfile.cart);
 app.get('/location', locationjsfile.location);
 
 app.use(app.router);
