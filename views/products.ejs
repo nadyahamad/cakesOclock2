@@ -18,18 +18,18 @@
                     <th width="120px">Action</th>
                 </tr>
                                
-                <% if(datax.length){             
-                 for(var i = 0;i < datax.length;i++) { %>
+                <% if(data.length){             
+                 for(var i = 0;i < data.length;i++) { %>
                 <tr>
                     <td><%=(i+1)%></td>
-                    <td><%=datax[i].name%></td>
-                    <td><%=datax[i].description%></td>
-                    <td><%=datax[i].price%></td>
-                    <td><%=datax[i].category%></td>
-                    <td><%=datax[i].allergen_info%></td>
+                    <td><%=data[i].name%></td>
+                    <td><%=data[i].description%></td>
+                    <td><%=data[i].price%></td>
+                    <td><%=data[i].category%></td>
+                    <td><%=data[i].allergen_info%></td>
                     <td>
-                        <a class="a-inside edit" href="../products/edit/<%=datax[i].id%>">Edit</a>
-                        <a class="a-inside delete" href="../products/delete/<%=datax[i].id%>">Delete</a>
+                        <a class="a-inside edit" href="../products/edit/<%=data[i].id%>">Edit</a>
+                        <a class="a-inside delete" href="../products/delete/<%=data[i].id%>">Delete</a>
                     </td>
                 </tr>
                  <% }
@@ -59,39 +59,9 @@
             <h1 class="bottom-dotted text-center">Cakes</h1>
             <div class="card-container">
                 <div class="category-card">
-
-
-
-
-
-                       
                     <img src="img/products/choco_cake.jpg"  class="img" alt="chocolate cake">
-                    <h2>
-
-                    <% if(datax.length){             
-                        for(var i = 0; i < datax.length;i++) { %>
-                       <tr>
-                           <td><%=(i+1)%></td>
-                           <td><%=datax[i].name%></td>
-                       </tr>
-                        <% }
-                           }else{ %>
-                                <tr>  <td colspan="3">No name</td> </tr>
-                       <% } %>
-                    </h2>
-                    <p class="text-justify pl-1 pr-1">
-                        <% if(datax.length){             
-                            for(var i = 0; i < datax.length;i++) { %>
-                           <tr>
-                               <td><%=(i+1)%></td>
-                               <td><%=datax[i].description%></td>
-                           </tr>
-                            <% }
-                               }else{ %>
-                                    <tr>  <td colspan="3">No name</td> </tr>
-                           <% } %>
-
-                    </p>
+                    <h2>Chocolate Cake</h2>
+                    <p class="text-justify pl-1 pr-1">Moist chocolate sponge covered in real 55% Belgium Chocolate.</p>
                     <h3> Allergen Information:</h3>
                     <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Sulphites</p>
                     <h3 class="price-text">From €25</h3>

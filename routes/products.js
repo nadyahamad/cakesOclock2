@@ -1,4 +1,3 @@
-
 /*
  * GET users listing.
  */
@@ -9,12 +8,18 @@ exports.list = function(req, res){
        
         var query = connection.query('SELECT * FROM products',function(err,rows)
         {
+            
             if(err)
                 console.log("Error Selecting : %s ",err );
-            res.render('products',{page_title:"Products - Node.js", datax:rows});
+     
+            res.render('products',{page_title:"Customers - Node.js",data:rows});
+                
+           
          });
+         
          //console.log(query.sql);
     });
+  
 };
 
 exports.add = function(req, res){
@@ -72,7 +77,6 @@ exports.save = function(req,res){
     
     });
 };
-
 exports.save_edit = function(req,res){
     
     var input = JSON.parse(JSON.stringify(req.body));
@@ -101,8 +105,6 @@ exports.save_edit = function(req,res){
     
     });
 };
-
-
 exports.delete_customer = function(req,res){
           
      var id = req.params.id;
@@ -121,5 +123,5 @@ exports.delete_customer = function(req,res){
         
      });
 };
-
 */
+

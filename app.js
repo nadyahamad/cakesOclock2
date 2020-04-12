@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -89,16 +88,15 @@ app.get('/contact_us', contactjsfile.contact);
 app.get('/faq', faqjsfile.faq);
 //get cookie policy url
 app.get('/cookie_policy', cpolicyjsfile.cpolicy);
-//users
-app.get('/customers', customers.cartlist);
+
+app.get('/customers', customers.list);
+app.get('/products', products.list);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
-//products and cart
-app.get('/products', products.list);
-app.get('/cart', cart.list);
+
 //get checkout url
 app.get('/checkout', checkoutjsfile.checkout);
 app.get('/location', locationjsfile.location);
