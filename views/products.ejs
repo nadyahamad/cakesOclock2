@@ -1,11 +1,8 @@
 <%- include layouts/header.ejs %>
 
         <div class="page-data">
-         <div class="data-btn">
-           <button onClick="addProduct();">+ Add</button>
-         </div>
          
-         <div class="data-table">
+     <!--    <div class="data-table">
             <table border="1" cellpadding="7" cellspacing="7">
                 <tr>
                     <h1> PRODUCTS</h1>
@@ -39,7 +36,7 @@
             </table>
          </div>
         </div>
-
+                -->
 
      <!-- main content -->
     <main class="container">
@@ -60,14 +57,33 @@
             <div class="card-container">
                 <div class="category-card">
                     <img src="img/products/choco_cake.jpg"  class="img" alt="chocolate cake">
-                    <h2>Chocolate Cake</h2>
-                    <p class="text-justify pl-1 pr-1">Moist chocolate sponge covered in real 55% Belgium Chocolate.</p>
+                    <h2>
+                        <% if(data.length){             
+                            for(var i = 0; i < data.length;i++) { %>
+                           <tr>
+                               <td><%=data[0].name%></td>
+                           </tr>
+                            <% }
+                               }else{ %>
+                                    <tr>  <td colspan="3">No name</td> </tr>
+                           <% } %>
+                    </h2>
+                    <p class="text-justify pl-1 pr-1">
+                        <% if(data.length){             
+                            for(var i = 0; i < data.length;i++) { %>
+                           <tr>
+                               <td><%=data[0].description%></td>
+                           </tr>
+                            <% }
+                               }else{ %>
+                                    <tr>  <td colspan="3">No name</td> </tr>
+                           <% } %></p>
                     <h3> Allergen Information:</h3>
                     <p class="text-justify pl-1 pr-1">Gluten (Wheat), Eggs, Milk, Sulphites</p>
                     <h3 class="price-text">From €25</h3>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -82,7 +98,7 @@
                     <h3 class="price-text">From €20</h3>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -97,7 +113,7 @@
                     <h3 class="price-text">From €25</h3>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -112,7 +128,7 @@
                     <h3 class="price-text">From €20</h3>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -127,7 +143,7 @@
                     <h3 class="price-text">From €20</h3>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -148,7 +164,7 @@
                     <p class="text-center"> 4, 8, 12 & 24 units</p>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -164,7 +180,7 @@
                     <p class="text-center"> 4, 8, 12 & 24 units</p>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -180,7 +196,7 @@
                     <p class="text-center"> 4, 8, 12 & 24 units</p>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>               
@@ -201,7 +217,7 @@
                     <p class="text-center"> 4, 8, 12 & 24 units</p>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>
@@ -222,7 +238,7 @@
                     <p class="text-center"> 4, 8, 12 & 24 units</p>
                     <div class="mb-1" >
                         <a href="./products.html" class="btn-secondary" role="button" aria-pressed="true">
-                            SELECT
+                            View
                         </a>
                     </div>
                 </div>

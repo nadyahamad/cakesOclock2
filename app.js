@@ -27,7 +27,8 @@ var locationjsfile  = require('./routes/location');
 
 //load register route
 var registerjsfile = require('./routes/register');
-
+//load item route
+var itemjsfile = require('./routes/items');
 
 
 var app = express();
@@ -96,7 +97,7 @@ app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
-
+app.get('/items', itemjsfile.items)
 //get cart url
 app.get('/cart', cartjsfile.cart);
 app.get('/location', locationjsfile.location);
