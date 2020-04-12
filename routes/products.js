@@ -1,4 +1,3 @@
-
 /*
  * GET users listing.
  */
@@ -78,7 +77,6 @@ exports.save = function(req,res){
     
     });
 };
-
 exports.save_edit = function(req,res){
     
     var input = JSON.parse(JSON.stringify(req.body));
@@ -107,8 +105,6 @@ exports.save_edit = function(req,res){
     
     });
 };
-
-
 exports.delete_customer = function(req,res){
           
      var id = req.params.id;
@@ -127,5 +123,5 @@ exports.delete_customer = function(req,res){
         
      });
 };
-
 */
+
