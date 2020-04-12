@@ -1,0 +1,82 @@
+<%- include layouts/header.ejs %>
+
+<% if @cart.empty? %>
+    <h1> Your cart is empty</h1>
+<%end%>
+
+
+<h1 class="tex-center"> Checkout </h1>
+<section id="itemsContainer" class="container mb-1">
+    <table id="checkout-products">
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <% total = 0 %>
+        <% @cart.each do |id, quantity| %>
+        <% item = Item.find_by_id(id) %>
+        <tr>
+            <td class="flex-container">
+                <div class="img-table">
+                     <%= link_to (image_tag item.image_url, :class => 'img'), item %>
+                </div>
+                <div class="description-table">
+                    <h2 class="text-left"><%= link_to item.title, item %></h2>
+                    <h3> Allergen Information:</h3>
+                    <p class="text-justify">  Gluten (Wheat), Eggs, Milk, Sulphites</p>
+                    <a href="/cart/remove/<%= item.id %>" class="mt-1">Remove from Cart</a>
+                </div>
+            </td>
+            <td>
+                <div>
+                     <a href="/cart/increase/<%= item.id %>"><%= image_tag("Chevron_up.png", alt: "icon up") %></a>
+                     <p class="text-center"><%= quantity %></p>
+                      <a href="/cart/decrease/<%= item.id %>"><%= image_tag("Chevron_down.png", alt: "icon down") %></a>
+                </div>
+               
+                
+                
+            </td>
+            <td>
+                <h4 class="text-center">
+                    <%= number_to_currency(quantity * item.price, :unit =>"€") %>
+                </h4>
+            </td>
+        </tr>
+        <% total += quantity * item.price %>
+        <% end %>
+            
+    </table>
+    <div class="payment-box">
+        <div class="payment-card mt-2 pb-2">
+            <h2 class="text-center product-name mb-1 pb-1">Cart Total</h2>
+            <h3 class="price-text mb-1">
+                <%= number_to_currency(total, :unit => "€") %>
+            </h3>
+             <a href="/checkout/" target="" class="btn-large " role="button" aria-pressed="true">
+                CHECKOUT
+            </a>
+
+        </div>
+    </div>
+</section>
+<section class="container mb-1">
+    <div class="mr-1">
+        <a href="/items" target="" class="btn-primary" role="button" aria-pressed="true">
+            CONTINUE SHOPPING
+        </a>
+    </div>
+    <div class="mr-1">
+        <a href="/cart/clear" target="" class="btn-secondary" role="button" aria-pressed="true">
+            EMPTY CART
+        </a>
+    </div>  
+</section>
+    
+
+<%- include layouts/footer.ejs %>
+
+
+
+
