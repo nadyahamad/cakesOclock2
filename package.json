@@ -7,7 +7,10 @@
   },
   "dependencies": {
     "base64-url": "^2.3.3",
+<<<<<<< HEAD
     "constantinople": "^3.1.2",
+=======
+>>>>>>> 6742247f49840c3210b37729575e323326302264
     "ejs": "^2.5.5",
     "express": "^3.21.2",
     "express-myconnection": "1.0.4",
