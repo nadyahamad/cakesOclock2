@@ -9,18 +9,12 @@ exports.list = function(req, res){
        
         var query = connection.query('SELECT * FROM products',function(err,rows)
         {
-            
             if(err)
                 console.log("Error Selecting : %s ",err );
-     
-            res.render('products',{page_title:"Customers - Node.js",data:rows});
-                
-           
+            res.render('products',{page_title:"Products - Node.js", datax:rows});
          });
-         
          //console.log(query.sql);
     });
-  
 };
 
 exports.add = function(req, res){
