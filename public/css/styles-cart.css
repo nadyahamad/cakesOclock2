@@ -92,4 +92,14 @@ a.btn-large-secondary:hover{
     font-weight: 500;
 }
 
+.quantity-input{
+    font-size: .9rem;
+    font-weight: 200;
+    padding: 10px;
+    width: 40%;
+    height: 20%;
+}
 
+.pl-3{
+    padding-left: 25%;
+}
