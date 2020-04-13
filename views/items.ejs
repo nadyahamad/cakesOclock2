@@ -13,21 +13,40 @@
         <div class="">
             <h3> Description:</h3>
             <!--test description but should be called from  db-->
-        <p class="text-justify">ipsum lorem lorem ipsum</p>
+            <p class="text-justify">ipsum lorem lorem ipsum</p>
             <h3> Allergen Information:</h3>
             <p class="text-justify">bla ipsum ipsum ipsum,ipsum</p>
         </div>
-        <div class="box-price">
-            <h3 class="text-left">Price £</h3>
-            <h4 class="price-text">20</h4>
-        </div>
-        <div class="pl-1">
-            <!--test btn but should be calling cart page-->
-            <a href="./cart" class="btn-secondary" role="button" aria-pressed="true">
-                ADD TO CART
-            </a>
-        </div>
-
+        <form class="">
+            <div class="flex-container">
+                <div class="sizes-units">
+                    <h3>Cakes sizes</h3>
+                    <label class="ml-1"> <input type="radio" name="cake-size" value = "6'" class="mr-1 mb-1" checked> 8-10 Portions</label>
+                    <br/>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="8'" class="mr-1 mb-1">12-14 Portions</label>
+                    <br/>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="9'" class="mr-1 mb-1">16-18 Portions</label>
+                    <br/>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="10'" class="mr-1 mb-1">20-22 Portions</label>
+                    <br/>
+                </div>
+                <div class="">
+                    <h3>Quantity</h3>
+                    <input type="number" name="quantity" min="1" max="100" class="quantity-input">
+                </div>
+            </div>
+            <div class="box-price">
+                <h3 class="text-left">Price</h3>
+                <h4 class="price-text">€20</h4>
+            </div>
+            <div class="pl-1">
+                <!--test btn but should be calling cart page-->
+                <a href="./cart" target="" class="btn-large" role="button" aria-pressed="true">
+                    ADD TO CART
+                </a>
+            </div>
+        </form>
+    </div>
 </section>
 
 
