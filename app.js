@@ -27,9 +27,15 @@ var locationjsfile  = require('./routes/location');
 
 //load register route
 var registerjsfile = require('./routes/register');
+<<<<<<< HEAD
+
+//load user route
+var userjsfile = require('./routes/user');
+=======
 //load item route
 var itemjsfile = require('./routes/items');
 
+>>>>>>> upstream/master
 
 var app = express();
 
@@ -77,9 +83,10 @@ app.use(
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-
 //get login url
 app.get('/login', registerjsfile.login);
+//get user url
+app.get('/user', userjsfile.user);
 
 //get about_us url
 app.get('/about_us', aboutjsfile.about);
