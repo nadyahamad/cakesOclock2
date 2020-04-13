@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -32,6 +31,13 @@ var registerjsfile = require('./routes/register');
 
 
 // Start up an instance of app
+//load user route
+var userjsfile = require('./routes/user');
+
+//load item route
+var itemjsfile = require('./routes/items');
+
+
 var app = express();
 
 var connection  = require('express-myconnection');
@@ -87,9 +93,10 @@ app.use(
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-
 //get login url
 app.get('/login', registerjsfile.login);
+//get user url
+app.get('/user', userjsfile.user);
 
 //get about_us url
 app.get('/about_us', aboutjsfile.about);
@@ -107,7 +114,7 @@ app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
-
+app.get('/items', itemjsfile.items)
 //get cart url
 app.get('/cart', cartjsfile.cart);
 app.get('/location', locationjsfile.location);
