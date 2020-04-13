@@ -28,8 +28,10 @@ var locationjsfile  = require('./routes/location');
 //load register route
 var registerjsfile = require('./routes/register');
 
+
 //load user route
 var userjsfile = require('./routes/user');
+
 //load item route
 var itemjsfile = require('./routes/items');
 
