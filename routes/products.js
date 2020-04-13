@@ -1,5 +1,5 @@
 /*
- * GET users listing.
+ * GET prodiucts listing.
  */
 
 exports.list = function(req, res){
@@ -9,7 +9,7 @@ exports.list = function(req, res){
         {
             if(err)
                 console.log("Error Selecting : %s ",err );
-                res.render('products',{page_title:"Customers - Node.js",data:rows});
+                res.render('products',{page_title:"products - Node.js",data:rows});
          });
          //console.log(query.sql);
     });
