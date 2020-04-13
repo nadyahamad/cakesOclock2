@@ -27,11 +27,17 @@ var locationjsfile  = require('./routes/location');
 
 //load register route
 var registerjsfile = require('./routes/register');
+<<<<<<< HEAD
 
 
 //load user route
 var userjsfile = require('./routes/user');
 
+=======
+
+//load user route
+var userjsfile = require('./routes/user');
+>>>>>>> upstream/master
 //load item route
 var itemjsfile = require('./routes/items');
 
