@@ -2,7 +2,8 @@
  * Module dependencies.
  */
 
-var express = require('express');
+var express = require('express');// Express to run server and routes
+var bodyParser = require('body-Parser');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
@@ -29,6 +30,7 @@ var locationjsfile  = require('./routes/location');
 var registerjsfile = require('./routes/register');
 
 
+// Start up an instance of app
 //load user route
 var userjsfile = require('./routes/user');
 
@@ -50,6 +52,15 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(methodOverride());
+
+/* Middleware*/
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+// Cors for cross origin allowance
+const cors = require('cors');
+app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
 

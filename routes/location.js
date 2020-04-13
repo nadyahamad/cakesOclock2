@@ -27,3 +27,5 @@ exports.location = function(req, res){
 
          //console.log(query.sql);
     };
+
+
