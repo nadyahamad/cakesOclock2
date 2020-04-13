@@ -3,23 +3,16 @@
  */
 
 exports.list = function(req, res){
-
   req.getConnection(function(err,connection){
        
         var query = connection.query('SELECT * FROM products',function(err,rows)
         {
-            
             if(err)
                 console.log("Error Selecting : %s ",err );
-     
-            res.render('products',{page_title:"Customers - Node.js",data:rows});
-                
-           
+                res.render('products',{page_title:"Customers - Node.js",data:rows});
          });
-         
          //console.log(query.sql);
     });
-  
 };
 
 exports.add = function(req, res){
@@ -27,22 +20,15 @@ exports.add = function(req, res){
 };
 
 exports.edit = function(req, res){
-    
     var id = req.params.id;
-    
     req.getConnection(function(err,connection){
        
         var query = connection.query('SELECT * FROM products WHERE id = ?',[id],function(err,rows)
         {
-            
             if(err)
                 console.log("Error Selecting : %s ",err );
-     
             res.render('edit_products',{page_title:"Edit Product Item - Node.js",data:rows});
-                
-           
          });
-         
          //console.log(query.sql);
     }); 
 };
