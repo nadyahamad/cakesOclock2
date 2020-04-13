@@ -1,4 +1,35 @@
 <%- include layouts/header.ejs %>
-<h1>items</h1>
+<h1>Items</h1>
+<section class="container margin">
+    <div class="product-img">
+        <!--test image but should be called from  db-->
+        <img src="img/products/choco_cake.jpg"  class="img" alt="chocolate cake">
+     </div>
+     <div class="product-details-card">
+        <div class="product-name">
+            <!--test product.name but should be called from  db-->
+            <h2>PRODUCT NAME TEST</h2>
+        </div>
+        <div class="">
+            <h3> Description:</h3>
+            <!--test description but should be called from  db-->
+        <p class="text-justify">ipsum lorem lorem ipsum</p>
+            <h3> Allergen Information:</h3>
+            <p class="text-justify">bla ipsum ipsum ipsum,ipsum</p>
+        </div>
+        <div class="box-price">
+            <h3 class="text-left">Price £</h3>
+            <h4 class="price-text">20</h4>
+        </div>
+        <div class="pl-1">
+            <!--test btn but should be calling cart page-->
+            <a href="./cart" class="btn-secondary" role="button" aria-pressed="true">
+                ADD TO CART
+            </a>
+        </div>
+
+</section>
+
+
 
 <%- include layouts/footer.ejs %>
