@@ -30,14 +30,14 @@ var locationjsfile  = require('./routes/location');
 var registerjsfile = require('./routes/register');
 
 
-// Start up an instance of app
+
 //load user route
 var userjsfile = require('./routes/user');
 
 //load item route
 var itemjsfile = require('./routes/items');
 
-
+// Start up an instance of app
 var app = express();
 
 var connection  = require('express-myconnection');
