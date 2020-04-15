@@ -1,58 +1,41 @@
 <%- include layouts/header.ejs %>
 
         <div class="page-data">
-         
-     <!--    <div class="data-table">
-            <table border="1" cellpadding="7" cellspacing="7">
-                <tr>
-                    <h1> PRODUCTS</h1>
-                    <th width="50px">Id</th>
-                    <th>Name</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th>Category</th>
-                    <th>allergen_info</th>
-                    <th width="120px">Action</th>
-                </tr>
-                               
-                <% if(data.length){             
-                 for(var i = 0;i < data.length;i++) { %>
-                <tr>
-                    <td><%=(i+1)%></td>
-                    <td><%=data[i].name%></td>
-                    <td><%=data[i].description%></td>
-                    <td><%=data[i].price%></td>
-                    <td><%=data[i].category%></td>
-                    <td><%=data[i].allergen_info%></td>
-                    <td>
-                        <a class="a-inside edit" href="../products/edit/<%=data[i].id%>">Edit</a>
-                        <a class="a-inside delete" href="../products/delete/<%=data[i].id%>">Delete</a>
-                    </td>
-                </tr>
-                 <% }
-                    }else{ %>
-                         <tr>  <td colspan="3">No user</td> </tr>
-                <% } %>
-            </table>
-         </div>
-        </div>
-                -->
 
      <!-- main content -->
     <main class="container">
         <!-- products large devices-->
         <div class="submenu">
-            <button class="tablinks" onclick="openProduct(event, 'Cakes')" id="defaultOpen">
-                Cakes
-            </button>
-            <button class="tablinks" onclick="openProduct(event, 'Brownies')">      Brownies
-            </button>
-            <button class="tablinks" onclick="openProduct(event, 'Cupcakes')">      Cupcakes
-            </button>
-            <button class="tablinks" onclick="openProduct(event, 'Cookies')">      Cookies
-            </button>
+            <% for (var i = 0; i < categories.length; i++) { %>
+                <button class="tablinks" onclick="openProduct(event, '<%= categories[i].name %>')" <%= i === 0 ? 'id=defaultOpen' : '' %>>
+                    <%= categories[i].name %>
+                </button>
+                <% } %>
         </div>
-        <section id="Cakes" class="tabcontent">
+        <% for (i = 0; i < categories.length; i++) { %>
+            <section id="<%= categories[i].name %>" class="tabcontent">
+                <h1 class="bottom-dotted text-center"><%= categories[i].name %></h1>
+                <div class="card-container">
+                    <% for (var j = 0; j < categories[i].products.length; j++) { %>
+                    <div class="category-card">
+                        <img src="/img/products/<%= categories[i].products[j].img_src %>.jpg"
+                            class="img"
+                            title="<%= categories[i].products[j].name %>"
+                            alt="<%= categories[i].products[j].name %>" />
+                        <h2><%= categories[i].products[j].name %></h2>
+                        <p class="text-justify pl-1 pr-1"><%= categories[i].products[j].description %></p>
+                        <h3 class="price-text">From €<%= categories[i].products[j].price %></h3>
+                        <div class="mb-1" >
+                            <a href="./items/<%= categories[i].products[j].id %>" class="btn-secondary" role="button" aria-pressed="true">
+                                View
+                            </a>
+                        </div>
+                    </div>
+                    <% } %>
+                </div>
+            </section>
+            <% } %>
+       <!-- <section id="Cakes" class="tabcontent">
             <h1 class="bottom-dotted text-center">Cakes</h1>
             <div class="card-container">
                 <div class="category-card">
@@ -223,7 +206,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
     </main>
     <!-- main content -->   
 <%- include layouts/footer.ejs %>

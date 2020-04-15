@@ -1,16 +1,37 @@
 /*
- * GET prodiucts listing.
+ * GET products listing.
  */
+var imageMappings = require('../mappings/images');
 
 exports.list = function(req, res){
   req.getConnection(function(err,connection){
        
-        var query = connection.query('SELECT * FROM products',function(err,rows)
+        var query = connection.query('SELECT * FROM products INNER JOIN categories USING (cat_id)',function(err,rows)
         {
             if(err)
-                console.log("Error Selecting : %s ",err );
-                res.render('products',{page_title:"products - Node.js",data:rows});
-         });
+            console.log("Error Selecting : %s ",err );
+
+            var categoriesWithProducts = [];
+            var categories = {};
+            var categoryId, ucCategoryName, productImageSrc;
+            for (var i = 0; i < rows.length; i++) {
+            categoryId = rows[i].cat_id;
+
+            if (!categories[categoryId]) {
+                ucCategoryName = rows[i].cat_name[0].toUpperCase() + rows[i].cat_name.slice(1);
+                categories[categoryId] = {
+                    id: rows[i].cat_id,
+                    name: ucCategoryName,
+                    products: []
+                };
+                categoriesWithProducts.push(categories[categoryId]);
+            }
+            productImageSrc = rows[i].name.toLowerCase().replace(/ /g, '_');
+            rows[i].img_src = imageMappings[productImageSrc] || productImageSrc;
+            categories[categoryId].products.push(rows[i]);
+        }
+            res.render('products',{page_title:"Customers - Node.js", data: [], categories: categoriesWithProducts });
+        });
          //console.log(query.sql);
     });
 };
