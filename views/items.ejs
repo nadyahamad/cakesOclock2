@@ -3,19 +3,22 @@
 <section class="container margin">
     <div class="product-img">
         <!--test image but should be called from  db-->
-        <img src="img/products/choco_cake.jpg"  class="img" alt="chocolate cake">
+        <img src="/img/products/<%= item.img_src %>.jpg"
+        class="img"
+        title="<%= item.name %>"
+        alt="<%= item.name %>" />
      </div>
      <div class="product-details-card">
         <div class="product-name">
             <!--test product.name but should be called from  db-->
-            <h2>PRODUCT NAME TEST</h2>
+            <h2><%= item.name %></h2>
         </div>
         <div class="">
             <h3> Description:</h3>
             <!--test description but should be called from  db-->
-            <p class="text-justify">ipsum lorem lorem ipsum</p>
+            <p class="text-justify"><%= item.description %></p>
             <h3> Allergen Information:</h3>
-            <p class="text-justify">bla ipsum ipsum ipsum,ipsum</p>
+            <p class="text-justify"><%= item.allergen_info %></p>
         </div>
         <form class="">
             <div class="flex-container">
@@ -37,7 +40,7 @@
             </div>
             <div class="box-price">
                 <h3 class="text-left">Price</h3>
-                <h4 class="price-text">€20</h4>
+                <h4 class="price-text">€<%= item.price %></h4>
             </div>
             <div class="pl-1">
                 <!--test btn but should be calling cart page-->
