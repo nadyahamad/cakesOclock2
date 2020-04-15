@@ -35,8 +35,11 @@
                 </div>
                 <div class="">
                     <h3>Quantity</h3>
-                    <input type="number" name="quantity" min="1" max="100" class="quantity-input">
-                </div>
+                     <!--Test Quantity-->
+                    <button class="minus-btn" type="button" name="button">-</button>
+                    <span class="item-quantity" >0</span>
+                    <button class="plus-btn" type="button" name="button">+</button>
+            </div>
             </div>
             <div class="box-price">
                 <h3 class="text-left">Price</h3>
@@ -44,8 +47,11 @@
             </div>
             <div class="pl-1">
                 <!--test btn but should be calling cart page-->
-                <a href="/cart" target="" class="btn-secondary" role="button" aria-pressed="true">
+                <a href="/cart/" target="" class="btn-secondary" role="button" aria-pressed="true">
                     ADD TO CART
+                </a>
+                <a href="/products/" target="" class="btn-secondary" role="button" aria-pressed="true">
+                    BACK
                 </a>
             </div>
         </form>
