@@ -2,9 +2,27 @@
  * GET item selected description.
  */
 
+var imageMappings = require('../mappings/images');
+
 exports.items = function(req, res){
 
-    res.render('items', {title: "ITEMS" });
+    var id = req.params.id;
+
+    req.getConnection(function(err,connection){
+
+        var query = connection.query('SELECT * FROM products WHERE id = ?', [id], function(err,rows)
+        {
+            if(err)
+                console.log("Error Selecting : %s ",err );
+
+            var item = rows[0];
+            var productImageSrc = item.name.toLowerCase().replace(/ /g, '_');
+            item.img_src = imageMappings[productImageSrc] || productImageSrc;
+
+            res.render('items',{page_title:"Item", item: item });
+        });
+
+    });
 };
 /*exports.add = function(req, res){
   res.render('add_products',{page_title:"Add Product Item - Node.js"});
