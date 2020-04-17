@@ -24,6 +24,8 @@ exports.items = function(req, res){
 
     });
 };
+
+
 /*exports.add = function(req, res){
   res.render('add_products',{page_title:"Add Product Item - Node.js"});
 };

@@ -1,0 +1,44 @@
+
+/*=  ITEMS - CONTENT| LARGE/DESKTOP
+--------------------------------------------------------*/
+/* Tab Style 
+--------------------------------------------------------*/
+
+/*Item View Image*/
+.img #product-img {
+    border: 10px dotted  red;
+}
+/*Item Qty Buttons*/
+button[class*=btn] {
+    width: 30px;
+    height: 30px;
+    background-color: brown;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+button .minus-btn{
+    background-color: brown;
+}
+
+
+
+
+/*=  PRODUCTS - CONTENT | MEDIUM/TABLETS
+--------------------------------------------------------
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+
+
+
+ }
+--------------------------------------------------------*/
+
+/*=  PRODUCTS - CONTENT | SMALL/MOBILE
+--------------------------------------------------------*/
+
+@media screen and (max-width: 1023px) {
+    /* Tab Style for small size devices
+    --------------------------------------------------------*/

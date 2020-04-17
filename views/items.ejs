@@ -35,22 +35,26 @@
                 </div>
                 <div class="">
                     <h3>Quantity</h3>
-                     <!--Test Quantity-->
+                     <!--Test Quantity Amount-->
                     <button class="minus-btn" type="button" name="button">-</button>
                     <span class="item-quantity" >0</span>
                     <button class="plus-btn" type="button" name="button">+</button>
+                   <!--Test Price-->
+                    <div class="box-price">
+                        <h3 class="text-left">Price</h3>
+                        <h4 class="price-text">€<%= item.price %></h4>
+                    </div>
+                
+                </div>
             </div>
-            </div>
-            <div class="box-price">
-                <h3 class="text-left">Price</h3>
-                <h4 class="price-text">€<%= item.price %></h4>
-            </div>
+ 
+
             <div class="pl-1">
                 <!--test btn but should be calling cart page-->
-                <a href="/cart/" target="" class="btn-secondary" role="button" aria-pressed="true">
+                <a href="/cart" target="" class="btn-secondary" role="button" aria-pressed="true">
                     ADD TO CART
                 </a>
-                <a href="/products/" target="" class="btn-secondary" role="button" aria-pressed="true">
+                <a href="/products" target="" class="btn-secondary" role="button" aria-pressed="true">
                     BACK
                 </a>
             </div>
@@ -58,4 +62,4 @@
     </div>
 </section>
 
-<%- include layouts/footer.ejs %>
+<%- include layouts/footer.ejs %>node 
