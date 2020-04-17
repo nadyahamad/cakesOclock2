@@ -3,24 +3,21 @@
  */
 
 var express = require('express');// Express to run server and routes
+var session = require('express-session');
 var bodyParser = require('body-Parser');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+
+
 
 var methodOverride = require('method-override')
 //load customers route
 var customers = require('./routes/customers');
 //load products route
 var products = require('./routes/products');
-//load about route
-var aboutjsfile = require('./routes/about');
-//load contact route
-var contactjsfile = require('./routes/contact');
-//load faq route
-var faqjsfile = require('./routes/faq');
-//load cpolicy route
-var cpolicyjsfile = require('./routes/cpolicy');
+//load static_pages routes
+var staticjsfile = require('./routes/static_pages');
 //load cart route
 var cartjsfile  = require('./routes/cart');
 //load location route
@@ -32,7 +29,7 @@ var registerjsfile = require('./routes/register');
 
 // Start up an instance of app
 //load user route
-var userjsfile = require('./routes/user');
+var profilejsfile = require('./routes/profile');
 
 //load item route
 var itemjsfile = require('./routes/items');
@@ -93,19 +90,21 @@ app.use(
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
+app.post('/register', registerjsfile.save);
 //get login url
 app.get('/login', registerjsfile.login);
+app.post('/login/edit/:id',customers.save_edit);
 //get user url
-app.get('/user', userjsfile.user);
+app.get('/profile', profilejsfile.profile);
 
 //get about_us url
-app.get('/about_us', aboutjsfile.about);
+app.get('/about_us', staticjsfile.about);
 //get contact_us url
-app.get('/contact_us', contactjsfile.contact);
+app.get('/contact_us', staticjsfile.contact);
 //get faq url
-app.get('/faq', faqjsfile.faq);
+app.get('/faq', staticjsfile.faq);
 //get cookie policy url
-app.get('/cookie_policy', cpolicyjsfile.cpolicy);
+app.get('/cookie_policy', staticjsfile.cpolicy);
 
 app.get('/customers', customers.list);
 app.get('/products', products.list);
@@ -124,3 +123,18 @@ app.use(app.router);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+// Errors => page not found 404
+app.use((req, res, next) =>  {
+  var err = new Error('Page not found');
+  err.status = 404;
+  next(err);
+})
+
+// Handling errors (send them to the client)
+app.use((err, req, res, next) => {
+  res.status(err.status || 500);
+  res.send(err.message);
+});
+
+module.exports = app;
