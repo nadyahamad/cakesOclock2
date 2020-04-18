@@ -3,13 +3,38 @@
 --------------------------------------------------------*/
 /* Tab Style 
 --------------------------------------------------------*/
-
-/*Item View Image*/
-.img #product-img {
-    border: 10px dotted  red;
+.container.margin{
+    padding: 40px;
 }
-/*Item Qty Buttons*/
-button[class*=btn] {
+    
+/*Item View Image*/
+.product-img{
+    background-color: darkcyan;
+}
+.product-img img{
+    width: 500px;
+    height: 300px;
+}
+/*Item Details*/
+.product-details-card{
+    padding-bottom: 25px;
+}
+.product-info{
+    padding: 0 35px 0 35px;
+}
+
+/*Flex-container for radio btns and Qty*/
+    
+/*SIZES*/
+.sizes-units{
+    width: 250px;
+    background-color: greenyellow;
+}
+label .ml-1{
+    width: 150px;
+}
+/*QUANTITY*/
+button[class*=minus-btn]{
     width: 30px;
     height: 30px;
     background-color: brown;
@@ -18,10 +43,24 @@ button[class*=btn] {
     border: none;
     cursor: pointer;
 }
-button .minus-btn{
+button[class*=plus-btn]{
+    width: 30px;
+    height: 30px;
     background-color: brown;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
 }
-
+    
+/*Price*/
+.box-price{
+    padding-left: 35px;
+}
+    
+.items-btn{
+    padding-left: 35px;
+}    
 
 
 

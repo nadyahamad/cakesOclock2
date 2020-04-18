@@ -1,10 +1,10 @@
 <%- include layouts/header.ejs %>
-<h1>Items</h1>
+<h1>Product</h1>
 <section class="container margin">
     <div class="product-img">
         <!--test image but should be called from  db-->
         <img src="/img/products/<%= item.img_src %>.jpg"
-        class="img"
+        class="img" 
         title="<%= item.name %>"
         alt="<%= item.name %>" />
      </div>
@@ -13,7 +13,7 @@
             <!--test product.name but should be called from  db-->
             <h2><%= item.name %></h2>
         </div>
-        <div class="">
+        <div class="product-info">
             <h3> Description:</h3>
             <!--test description but should be called from  db-->
             <p class="text-justify"><%= item.description %></p>
@@ -24,13 +24,13 @@
             <div class="flex-container">
                 <div class="sizes-units">
                     <h3>Cakes sizes</h3>
-                    <label class="ml-1"> <input type="radio" name="cake-size" value = "6'" class="mr-1 mb-1" checked> 8 Portions</label>
+                    <label class="ml-1"> <input type="radio" name="cake-size" value = "6'" class="mr-1 mb-1" checked>8-10 Portions</label>
                     <br/>
-                    <label  class="ml-1"><input type="radio" name="cake-size" value="8'" class="mr-1 mb-1">12 Portions</label>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="8'" class="mr-1 mb-1">12-14 Portions</label>
                     <br/>
-                    <label  class="ml-1"><input type="radio" name="cake-size" value="9'" class="mr-1 mb-1">16- Portions</label>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="9'" class="mr-1 mb-1">16-18 Portions</label>
                     <br/>
-                    <label  class="ml-1"><input type="radio" name="cake-size" value="10'" class="mr-1 mb-1">20 Portions</label>
+                    <label  class="ml-1"><input type="radio" name="cake-size" value="10'" class="mr-1 mb-1">20-22 Portions</label>
                     <br/>
                 </div>
                 <div class="">
@@ -49,7 +49,7 @@
             </div>
  
 
-            <div class="pl-1">
+            <div class="pl-1 items-btn">
                 <!--test btn but should be calling cart page-->
                 <a href="/cart" target="" class="btn-secondary" role="button" aria-pressed="true">
                     ADD TO CART
