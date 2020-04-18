@@ -79,3 +79,13 @@ button[class*=plus-btn]{
 @media screen and (max-width: 1023px) {
     /* Tab Style for small size devices
     --------------------------------------------------------*/
+    .container-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+    .product-img{
+        display: flex;
+        justify-content: center;
+        }
+    }
