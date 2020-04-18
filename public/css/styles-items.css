@@ -3,21 +3,22 @@
 --------------------------------------------------------*/
 /* Tab Style 
 --------------------------------------------------------*/
-.container.margin{
-    padding: 40px;
+.container-items{
+display: flex;
+flex-direction: row;
+justify-content: center;
 }
     
 /*Item View Image*/
-.product-img{
-    background-color: darkcyan;
-}
+
 .product-img img{
     width: 500px;
     height: 300px;
 }
 /*Item Details*/
 .product-details-card{
-    padding-bottom: 25px;
+    padding-bottom: 20px;
+    width: 800px;
 }
 .product-info{
     padding: 0 35px 0 35px;
@@ -28,11 +29,8 @@
 /*SIZES*/
 .sizes-units{
     width: 250px;
-    background-color: greenyellow;
 }
-label .ml-1{
-    width: 150px;
-}
+
 /*QUANTITY*/
 button[class*=minus-btn]{
     width: 30px;
