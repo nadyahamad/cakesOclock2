@@ -7,18 +7,22 @@
             <a href="/login" class="login"> Log in</a>
         </p>
         <p class="text-left ml-2"> Please enter your details </p>
-        <form method="POST" action='/register'>
+        <form method="post" action='/register'>
             <div class="padding-1">
                 <label>First Name</label>
-                <input type= "text" name ="first-name" placeholder="First Name" class ="form-inputs"/>
+                <input type= "text" name ="firstname" placeholder="First Name" class ="form-inputs"/>
             </div>
             <div class="padding-1">
                 <label>Last Name</label>
-                <input type= "text" name ="last-name" placeholder="Last Name" class ="form-inputs"/>
+                <input type= "text" name ="lastname" placeholder="Last Name" class ="form-inputs"/>
             </div>
             <div class="padding-1">
                 <label>Email</label>
-                <input type= "email" name ="pmail" placeholder="Email" class ="form-inputs"/>
+                <input type= "email" name ="email" placeholder="Email" class ="form-inputs"/>
+            </div>
+            <div class="padding-1">
+                <label>Phone</label>
+                <input type= "text" name ="address" placeholder="Address" class ="form-inputs"/>
             </div>
             <div class="padding-1">
                 <label>Password</label>
@@ -28,14 +32,8 @@
                 <label>Confirm Password</label>
                 <input type= "password" name ="confirm-password" placeholder="Password" class ="form-inputs" autocomplete required/>
             </div>
-            <div class="padding-1">
-                <label>Phone</label>
-                <input type= "text" name ="Address" placeholder="Address" class ="form-inputs"/>
-            </div>
             <div class="padding-1 container">
-                <button onClick="addUser();" class="btn-large-secondary"> 
-                    CREATE AN ACCOUNT 
-                </button>
+                <input type="submit" value="CREATE AN ACCOUNT" class="form-btn">
             </div>
         </form>
     </section>
