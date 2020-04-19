@@ -26,15 +26,13 @@ var locationjsfile  = require('./routes/location');
 //load register route
 var registerjsfile = require('./routes/register');
 
-
-// Start up an instance of app
-//load profile route
+//load user route
 var profilejsfile = require('./routes/profile');
 
 //load item route
 var itemjsfile = require('./routes/items');
 
-
+// Start up an instance of app
 var app = express();
 
 var connection  = require('express-myconnection');
