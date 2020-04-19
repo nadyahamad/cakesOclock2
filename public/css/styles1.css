@@ -394,7 +394,7 @@ a.btn-secondary:hover{
     margin-right: 30px;
 }
 
-
+/*
 .product-details-card{
     width: 30%;
     height: 100%;
@@ -407,7 +407,7 @@ a.btn-secondary:hover{
     background-color: #F1EFEF;
     box-shadow: 1px 1px 1.5px #675151;
     border: 1px solid #C7BFBF;
-}
+}*/
 
 .product-name{
     border-bottom: 5px dotted #230D0C;

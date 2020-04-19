@@ -3,13 +3,36 @@
 --------------------------------------------------------*/
 /* Tab Style 
 --------------------------------------------------------*/
-
-/*Item View Image*/
-.img #product-img {
-    border: 10px dotted  red;
+.container-items{
+display: flex;
+flex-direction: row;
+justify-content: center;
 }
-/*Item Qty Buttons*/
-button[class*=btn] {
+    
+/*Item View Image*/
+
+.product-img img{
+    width: 500px;
+    height: 300px;
+}
+/*Item Details*/
+.product-details-card{
+    padding-bottom: 20px;
+    width: 800px;
+}
+.product-info{
+    padding: 0 35px 0 35px;
+}
+
+/*Flex-container for radio btns and Qty*/
+    
+/*SIZES*/
+.sizes-units{
+    width: 250px;
+}
+
+/*QUANTITY*/
+button[class*=minus-btn]{
     width: 30px;
     height: 30px;
     background-color: brown;
@@ -18,10 +41,24 @@ button[class*=btn] {
     border: none;
     cursor: pointer;
 }
-button .minus-btn{
+button[class*=plus-btn]{
+    width: 30px;
+    height: 30px;
     background-color: brown;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
 }
-
+    
+/*Price*/
+.box-price{
+    padding-left: 35px;
+}
+    
+.items-btn{
+    padding-left: 35px;
+}    
 
 
 
@@ -42,3 +79,13 @@ button .minus-btn{
 @media screen and (max-width: 1023px) {
     /* Tab Style for small size devices
     --------------------------------------------------------*/
+    .container-items {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
+    .product-img{
+        display: flex;
+        justify-content: center;
+        }
+    }

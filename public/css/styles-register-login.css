@@ -39,20 +39,21 @@ a.login:hover{
 input.form-inputs{
     padding: 12px 20px;
     margin: 8px 0;
-   	display: inline-block;
+    display: block;
+    width: 100%;
    	border: none;
     border-bottom: 1px solid #664B4B;
     border-radius: 2px;
     background-color: #FFF;
 }
 
-.form-inputs:hover{
+input.form-inputs:hover{
     background-color: #FFF;
     box-shadow: 1px 1px 3px #AD2D2D;
     border-bottom: 1px solid #AD2D2D;
 }
 
-.btn-large-secondary{
+input.form-btn{
     background-color: #ED3D3D;
     border: 2px solid #ED3D3D;
     color: #fff;
@@ -67,7 +68,7 @@ input.form-inputs{
     box-shadow: 1px 1px 2px #ED3D3D;
 }
 
-.btn-large-secondary:hover{
+input.form-btn:hover{
     background-color: #AD2D2D;
     border: 2px solid #AD2D2D;
     color: #fff;
