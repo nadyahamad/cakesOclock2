@@ -28,7 +28,7 @@ var registerjsfile = require('./routes/register');
 
 
 // Start up an instance of app
-//load user route
+//load profile route
 var profilejsfile = require('./routes/profile');
 
 //load item route
@@ -85,15 +85,23 @@ app.use(
 
 );
 
-
+// session
+app.use(session({
+  secret:'Cakes Oclock',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+      maxAge: 60 * 1000 * 30
+  }
+}));
 
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-app.post('/register', registerjsfile.save);
+app.post('/profile', registerjsfile.register_data);
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/login/edit/:id',customers.save_edit);
+app.post('/login/data',registerjsfile.login_data);
 //get user url
 app.get('/profile', profilejsfile.profile);
 
