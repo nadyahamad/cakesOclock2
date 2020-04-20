@@ -99,11 +99,16 @@ app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
 app.post('/profile', registerjsfile.register_data);
+
 //get login url
 app.get('/login', registerjsfile.login);
 app.post('/login/data',registerjsfile.login_data);
+
+//get logout url
+app.get('/logout', registerjsfile.logout);
+
 //get user url
-app.get('/profile', profilejsfile.profile);
+app.get('/profile', registerjsfile.profile);
 
 //get about_us url
 app.get('/about_us', staticjsfile.about);
