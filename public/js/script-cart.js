@@ -7,18 +7,22 @@ if (document.readyState == 'loading') {
   ready()
 }
 
-function ready() {
-  var removeCartItemButtons = document.getElementsByClassName("btn-secondary");
-  console.log(removeCartItemButtons);
-  for (var i = 0; i < removeCartItemButtons.length; i++) {
-    var button = removeCartItemButtons[i];
-    button.addEventListener("click", function(event) {
-      console.log("clicked")
-      var buttonClicked = event.target
-      buttonClicked.parentElement.parentElement.remove()
-    });
-  }
+  function ready() {
+    var removeCartItemButtons = document.getElementsByClassName('btn-cart')
+    console.log(removeCartItemButtons);
+    for (var i = 0; i < removeCartItemButtons.length; i++) {
+        var button = removeCartItemButtons[i]
+        button.addEventListener('click', removeCartItem)
+    }
+    }
+
+
+function removeCartItem(event) {
+    var buttonClicked = event.target
+    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove()
+    updateCartTotal()
 }
+
 
 function updateCartTotal() {
   var cartItemContainer = document.getElementsByClassName('cart-items')[0]
