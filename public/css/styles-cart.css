@@ -72,7 +72,27 @@ select {
     margin: auto;
 }
 
-a.btn-large-secondary{
+.btn-remove-cart{
+    background-color: #230D0C;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px 70px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 1px 1px 2px #675151;
+}
+
+.btn-cart:hover{
+    background-color: #664B4B;
+    color:#fff;
+    font-weight: 500;
+}
+
+.btn-empty-cart{
     background-color: #230D0C;
     color: #fff;
     font-size: 1.2rem;
@@ -86,12 +106,31 @@ a.btn-large-secondary{
     box-shadow: 1px 1px 2px #675151;
 }
 
-a.btn-large-secondary:hover{
+.btn-empty-cart:hover{
     background-color: #664B4B;
     color:#fff;
     font-weight: 500;
 }
 
+.btn-checkout{
+    background-color: #230D0C;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin: 0px;
+    padding: 15px 100px;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 1px 1px 2px #675151;
+}
+
+.btn-checkout:hover{
+    background-color: #664B4B;
+    color:#fff;
+    font-weight: 500;
+}
 .quantity-input{
     font-size: .9rem;
     font-weight: 200;
