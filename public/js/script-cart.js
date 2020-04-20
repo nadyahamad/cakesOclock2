@@ -60,5 +60,29 @@ function showResult(locationRequest) {
     loc.append(option);
   }
 }
-
-
+//calculation added min and plus btns
+var item = {
+  data: {
+      id: null,
+      price: null,
+      quantity: 0,
+  },
+  //update price according to quantity selected
+  updateViews: function() {
+      document.getElementsByClassName('item-quantity')[0].textContent = item.data.quantity;
+      document.getElementById('product_size_price').textContent = item.data.price;
+      document.getElementById('product_size_total').textContent = item.data.price * item.data.quantity;
+  }
+};
+//btn minus calculation 
+var buttonDownEl = document.getElementsByClassName('minus-btn')[0];
+buttonDownEl.onclick = function() {
+    item.data.quantity = Math.max(item.data.quantity - 1, 1);
+    item.updateViews();
+}
+//btn plus calculation
+var buttonUpEl = document.getElementsByClassName('plus-btn')[0];
+buttonUpEl.onclick = function() {
+    item.data.quantity = Math.min(item.data.quantity + 1, 1000);
+    item.updateViews();
+}
