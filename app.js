@@ -4,7 +4,7 @@
 
 var express = require('express');// Express to run server and routes
 var session = require('express-session');
-var bodyParser = require('body-Parser');
+var bodyParser = require('body-parser');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
