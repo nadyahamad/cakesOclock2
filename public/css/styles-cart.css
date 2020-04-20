@@ -146,6 +146,15 @@ select {
 .flex-container {
     display: flex;
     justify-content: space-around;
+   
     margin: auto;
 }
 
+.cart-row{
+    display: flex;
+    flex-direction: row;
+}
+.qtycol{
+    width: 20%;
+    padding: 0px;
+}
