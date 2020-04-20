@@ -1,6 +1,0 @@
-/*
- * GET user/profile page.
- */
-
-
-

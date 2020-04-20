@@ -17,12 +17,12 @@ exports.login = function(req, res){
 
 
 exports.profile = function(req, res){
-    let user = req.session.user;
-    if(user) {
+    //let user = req.session.user;
+    //if(user) {
         res.render('profile', {title: "User Profile Page" });
-        return;
-    }
-    res.redirect('/');
+        //return;
+    //}
+    //res.redirect('/');
 };
 
 
