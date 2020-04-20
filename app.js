@@ -26,10 +26,11 @@ var locationjsfile  = require('./routes/location');
 //load register route
 var registerjsfile = require('./routes/register');
 
-
-
 //load user route
-var profilejsfile = require('./routes/profile');
+//var profilejsfile = require('./routes/profile');
+
+//load customers route
+var users = require('./routes/users');
 
 //load item route
 var itemjsfile = require('./routes/items');
@@ -85,17 +86,40 @@ app.use(
 
 );
 
-
+// session
+app.use(session({
+  secret:'Cakes Oclock',
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+      maxAge: 60 * 1000 * 30
+  }
+}));
 
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-app.post('/register', registerjsfile.save);
+app.post('/profile', registerjsfile.register_data);
+
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/login/edit/:id',customers.save_edit);
+app.post('/login/data',registerjsfile.login_data);
+
+//get logout url
+app.get('/logout', registerjsfile.logout);
+
 //get user url
-app.get('/profile', profilejsfile.profile);
+app.get('/profile', registerjsfile.profile);
+app.get('/profile/edit/:id', users.edit);
+app.post('/profile/edit/:id',users.save_edit);
+
+//get users url
+app.get('/users', users.list);
+app.get('/users/edit/:id', users.edit);
+app.post('/users/edit/:id',users.save_edit);
+app.get('/users/delete/:id', users.delete_user);
+
+
 
 //get about_us url
 app.get('/about_us', staticjsfile.about);
