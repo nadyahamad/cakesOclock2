@@ -5,13 +5,13 @@ const bcrypt = require('bcrypt');
 function User() {};
 
 User.prototype = {
-    // Find the user data by id or username.
+    // Find the user data by id or email.
     find : function(user = null, callback)
     {
         // if the user variable is defind
         if(user) {
             // if user = number return field = id, if user = string return field = username.
-            var field = Number.isInteger(user) ? 'id' : 'first_name';
+            var field = Number.isInteger(user) ? 'id' : 'email';
         }
         // prepare the sql query
         let sql = `SELECT * FROM users WHERE ${field} = ?`;
