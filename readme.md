@@ -7,7 +7,7 @@ I
 
 	npm install
 
-## Configuration (database)
+## Configuration (database- example , its not the real one)
 app.js
 
         host: 'localhost',
