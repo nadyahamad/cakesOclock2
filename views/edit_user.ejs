@@ -9,20 +9,20 @@
         <div class="accordion-body">
             <form method="post" action='/users/edit/<%=data[0].id%>'>
                 <div class="padding-1">
-                    <label>First Name</label>
-                    <input type= "text" name ="first_name" placeholder="First Name" class ="form-inputs" value="<%=data[0].first_name%>" required/>
+                    <label>Username</label>
+                    <input type= "text" name ="username" placeholder="username" class ="form-inputs" value="<%=data[0].username%>" />
                 </div>
                 <div class="padding-1">
-                    <label>Last Name</label>
-                    <input type= "text" name ="last_name" placeholder="Last Name" class ="form-inputs" value="<%=data[0].last_name%>" required/>
+                    <label>Full Name</label>
+                    <input type= "text" name ="fullname" placeholder="Full Name" class ="form-inputs" value="<%=data[0].fullname%>" />
                 </div>
                 <div class="padding-1">
                     <label>Email</label>
-                    <input type= "email" name ="email" placeholder="Email" class ="form-inputs" value="<%=data[0].email%>" required/>
+                    <input type= "email" name ="email" placeholder="Email" class ="form-inputs" value="<%=data[0].email%>" autocomplete required/>
                 </div>
                 <div class="padding-1">
                     <label>Phone</label>
-                    <input type= "text" name ="phone" placeholder="Phone" class ="form-inputs" value="<%=data[0].phone%>"/>
+                    <input type= "text" name ="phone" placeholder="Phone" class ="form-inputs" value="<%=data[0].phone%>" autocomplete required/>
                 </div>
                 <div class="padding-1 container">
                     <input type="submit" name="submit" value="Save" class="form-btn" >

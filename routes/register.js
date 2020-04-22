@@ -17,22 +17,40 @@ exports.login = function(req, res){
 
 
 exports.profile = function(req, res){
-    //let user = req.session.user;
-    //if(user) {
+    let user = req.session.user;
+    if(user) {
         res.render('profile', {title: "User Profile Page" });
-        //return;
-    //}
-    //res.redirect('/');
+        return;
+    }
+    es.redirect('/');
 };
 
 
+
+// Post login data 
+exports.login_data = function(req, res, next){
+    // The data sent from the user are stored in the req.body object.
+    // call our login function and it will return the result(the user data).
+    user.login(req.body.email, req.body.password, function(result) {
+        if(result) {
+            // Store the user data in a session.
+            req.session.user = result;
+            req.session.opp = 1;
+            // redirect the user to the home page.
+            res.redirect('/profile');
+        }else {
+            // if the login function returns null send this error message back to the user.
+            res.send('email/Password incorrect!');
+        }
+    })
+};
 
 //  post register data 
 exports.register_data = function(req, res){
     // prepare an object containing all user inputs.
     let userInput = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        username: req.body.username,
+        fullname: req.body.fullname,
         email: req.body.email,
         phone: req.body.phone,
         password: req.body.password
@@ -56,31 +74,10 @@ exports.register_data = function(req, res){
 };
 
 
-
-// Post login data 
-exports.login_data = function(req, res, next){
-    // The data sent from the user are stored in the req.body object.
-    // call our login function and it will return the result(the user data).
-    user.login(req.body.email, req.body.password, function(result)  {
-        if(result) {
-            res.send('Logged in as :' + result.email);
-            //Store the user data in a session.
-            req.session.user = result;
-            req.session.opp = 1;
-            //redirect the user to the home page.
-            res.redirect('/profile');
-        }else {
-            // if the login function returns null send this error message back to the user.
-            res.send('email/Password incorrect!');
-        }
-    })
-};
-
-
 			
 //  Get logout page 
 exports.logout = function(req, res){
-    res.render('logout', {title: "Log out" });
+    res.render('/', {title: "Log out" });
     // Check if the session is exist
     if(req.session.user) {
         // destroy the session and redirect the user to the index page.
