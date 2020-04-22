@@ -24,7 +24,7 @@ exports.list = function(req, res){
   };
   
 exports.add = function(req, res){
-    es.render('add_users',{page_title:"Add Customers - Node.js"});
+    es.render('add_users',{page_title:"Add Users - Node.js"});
 };
   
   exports.edit = function(req, res){
@@ -56,20 +56,20 @@ exports.add = function(req, res){
       req.getConnection(function (err, connection) {
           
           var data = {
-              first_name    : input.first_name,
-              last_name : input.last_name,
+              username   : input.username,
+              fullname : input.fullname,
               email   : input.email,
-              phone   : input.phone 
-          
+              phone   : input.phone,
+              password   : input.password
           };
           
-          var query = connection.query("INSERT INTO customer set ? ",data, function(err, rows)
+          var query = connection.query("INSERT INTO users set ? ",data, function(err, rows)
           {
     
             if (err)
                 console.log("Error inserting : %s ",err );
            
-            res.redirect('/customers');
+            res.redirect('/users');
             
           });
           
@@ -86,10 +86,11 @@ exports.add = function(req, res){
       req.getConnection(function (err, connection) {
           
           var data = {   
-            first_name    : input.first_name,
-            last_name : input.last_name,
+            username   : input.username,
+            fullname : input.fullname,
             email   : input.email,
-            phone   : input.phone 
+            phone   : input.phone,
+            password   : input.password  
           
           };
           

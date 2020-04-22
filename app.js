@@ -103,7 +103,7 @@ app.post('/profile', registerjsfile.register_data);
 
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/login/data',registerjsfile.login_data);
+app.post('/profile',registerjsfile.login_data);
 
 //get logout url
 app.get('/logout', registerjsfile.logout);
