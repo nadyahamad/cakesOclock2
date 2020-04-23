@@ -35,3 +35,22 @@ exports.cart = function(req, res){
 
     });
 };
+
+//Routes For calling shop_locations from table
+/*
+exports.cart = function(req, res){
+
+    req.getConnection(function(err,connection) {
+
+        connection.query('SELECT id, shop_location FROM shops',function(err,rows)
+        {
+
+            if(err)
+                console.log("Error Selecting : %s ",err );
+
+            res.render('cart', {title: "Your Order", locations: rows });
+        });
+
+    });
+};
+*/

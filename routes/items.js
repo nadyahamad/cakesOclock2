@@ -3,13 +3,14 @@
  */
 
 exports.items = function(req, res){
-
+    // Retrieve the tag from our URL path
+    //take the req object and retrieve our params from the params object
     var id = req.params.id;
 
     req.getConnection(function(err,connection){
 
         var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price FROM products p INNER JOIN product_size ps ON p.id = ps.product_id INNER JOIN sizes s ON s.id = ps.size_id WHERE p.id = ?'
-        var query = connection.query(queryStr, [id], function(err,rows)  /*(query, data, callback)*/
+        var query = connection.query(queryStr, [id], function(err,rows)  /*(query, data, callback)*/ /*function (err, result, fields)*/
         {
             if(err)
                 console.log("Error Selecting : %s ",err );
