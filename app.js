@@ -139,8 +139,10 @@ app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
 app.get('/items/:id', itemjsfile.items)
 //get cart url
-app.get('/cart', cartjsfile.cart);
+app.get('/cart', cartjsfile.getCart);
 app.get('/location', locationjsfile.location);
+app.post('/add-to-cart',cartjsfile.addToCart);
+app.post('/delete-cart',cartjsfile.deleteInCart);
 
 app.use(app.router);
 

@@ -51,9 +51,11 @@
 
             <div class="pl-1 items-btn">
                 <!--test btn but should be calling cart page-->
-                <a href="/cart" target="" class="btn-secondary" role="button" aria-pressed="true">
-                    ADD TO CART
-                </a>
+                <form action="/add-to-cart" method = "POST" >
+                    <input type="hidden" name="id" value="<%=item.id%>">   
+                <button type = "submit"  class="btn-add-to-cart" role="button" aria-pressed="true">
+                    ADD TO CART </button>
+                
                 <a href="/products" target="" class="btn-secondary" role="button" aria-pressed="true">
                     BACK
                 </a>
@@ -62,4 +64,4 @@
     </div>
 </section>
 
-<%- include layouts/footer.ejs %>node 
+<%- include layouts/footer.ejs %>
