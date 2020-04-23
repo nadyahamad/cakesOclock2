@@ -43,8 +43,10 @@ var mysql = require('mysql');
 
 // all environments
 app.set('port', process.env.PORT || 4300);
+// Set directory to contain the templates ('views')
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// Set view engine to use, in this case 'ejs'
+app.set('view engine', 'ejs'); //rendering data
 //app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -131,15 +133,17 @@ app.get('/faq', staticjsfile.faq);
 app.get('/cookie_policy', staticjsfile.cpolicy);
 
 app.get('/customers', customers.list);
-app.get('/products', products.list);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
+//get prd and item
+app.get('/products', products.list);
 app.get('/items/:id', itemjsfile.items)
 //get cart url
 app.get('/cart', cartjsfile.cart);
+//app.post('/cart', cartjsfile.cart_items); <maybe needed for show selected items
 app.get('/location', locationjsfile.location);
 
 app.use(app.router);

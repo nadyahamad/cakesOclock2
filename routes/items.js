@@ -9,12 +9,12 @@ exports.items = function(req, res){
     req.getConnection(function(err,connection){
 
         var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price FROM products p INNER JOIN product_size ps ON p.id = ps.product_id INNER JOIN sizes s ON s.id = ps.size_id WHERE p.id = ?'
-        var query = connection.query(queryStr, [id], function(err,rows)
+        var query = connection.query(queryStr, [id], function(err,rows)  /*(query, data, callback)*/
         {
             if(err)
                 console.log("Error Selecting : %s ",err );
 
-            var productWithSizes = {
+            var productWithSizes = {   /*var storing data from two diff tables*/ 
                 prd_img: rows[0].prd_img,
                 name: rows[0].name,
                 description: rows[0].description,

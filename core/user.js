@@ -30,7 +30,7 @@ User.prototype = {
 
     // This function will insert data into the database. (create a new user)
     // body is an object 
-    create : function(body, callback) 
+   /*create : function(body, callback) 
     {
 
         var pwd = body.password;
@@ -51,7 +51,7 @@ User.prototype = {
             // return the last inserted id. if there is no error
             callback(result.insertId);
         });
-    },
+    },*/
 
     login : function(email, password, callback)
     {
