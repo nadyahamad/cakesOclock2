@@ -27,7 +27,7 @@ var locationjsfile  = require('./routes/location');
 var registerjsfile = require('./routes/register_login');
 
 //load user route
-//var profilejsfile = require('./routes/profile');
+var profilejsfile = require('./routes/profile');
 
 //load customers route
 var users = require('./routes/users');
@@ -109,11 +109,11 @@ app.get('/login', registerjsfile.login);
 app.post('/login_data',registerjsfile.login_data);
 
 //get logout url
-//app.get('/logout', registerjsfile.logout);
+app.get('/logout', registerjsfile.loggout);
 
 //get user url
-app.get('/profile', registerjsfile.profile);
-//app.get('/profile/edit/:id', users.edit);
+app.get('/profile', profilejsfile.profile);
+//app.get('/profile/:id', profilejsfile.profile_edit);
 //app.post('/profile/edit/:id',users.save_edit);
 
 //get users url
