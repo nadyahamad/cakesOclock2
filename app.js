@@ -3,7 +3,7 @@
  */
 
 var express = require('express');// Express to run server and routes
-var session = require('express-session');
+//var session = require('express-session');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
 var http = require('http');
@@ -24,7 +24,7 @@ var cartjsfile  = require('./routes/cart');
 var locationjsfile  = require('./routes/location');
 
 //load register route
-var registerjsfile = require('./routes/register');
+var registerjsfile = require('./routes/register_login');
 
 //load user route
 //var profilejsfile = require('./routes/profile');
@@ -88,7 +88,7 @@ app.use(
 
 );
 
-// session
+/* session
 app.use(session({
   secret:'Cakes Oclock',
   resave: false,
@@ -97,29 +97,30 @@ app.use(session({
       maxAge: 60 * 1000 * 30
   }
 }));
+*/
 
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-app.post('/profile', registerjsfile.register_data);
+app.post('/register_data', registerjsfile.register_data);
 
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/profile',registerjsfile.login_data);
+app.post('/login_data',registerjsfile.login_data);
 
 //get logout url
-app.get('/logout', registerjsfile.logout);
+//app.get('/logout', registerjsfile.logout);
 
 //get user url
 app.get('/profile', registerjsfile.profile);
-app.get('/profile/edit/:id', users.edit);
-app.post('/profile/edit/:id',users.save_edit);
+//app.get('/profile/edit/:id', users.edit);
+//app.post('/profile/edit/:id',users.save_edit);
 
 //get users url
-app.get('/users', users.list);
-app.get('/users/edit/:id', users.edit);
-app.post('/users/edit/:id',users.save_edit);
-app.get('/users/delete/:id', users.delete_user);
+//app.get('/users', users.list);
+//app.get('/users/edit/:id', users.edit);
+//app.post('/users/edit/:id',users.save_edit);
+//app.get('/users/delete/:id', users.delete_user);
 
 
 

@@ -1,5 +1,5 @@
 const express = require('express');
-const User = require('../core/user');
+const User = require('../user_dbq/userdb');
 const router = express.Router();
 
 // create an object from the class User in the file core/user.js
@@ -17,36 +17,37 @@ exports.login = function(req, res){
 
 
 exports.profile = function(req, res){
-    let user = req.session.user;
+    /*let user = req.session.user;
     if(user) {
         res.render('profile', {title: "User Profile Page" });
         return;
     }
-    es.redirect('/');
+    es.redirect('/');*/
+    res.render('profile', {title: "Log in" });
+    res.send('this is the profile');
 };
 
 
 
 // Post login data 
 exports.login_data = function(req, res, next){
-    // The data sent from the user are stored in the req.body object.
-    // call our login function and it will return the result(the user data).
-    user.login(req.body.email, req.body.password, function(result) {
+    user.login(req.body.username, req.body.password, function(result) {
         if(result) {
-            // Store the user data in a session.
+            /* Store the user data in a session.
             req.session.user = result;
             req.session.opp = 1;
             // redirect the user to the home page.
-            res.redirect('/profile');
+            res.redirect('/home');*/
+            res.send('Logged in as :' + result.username);
         }else {
             // if the login function returns null send this error message back to the user.
-            res.send('email/Password incorrect!');
+            res.send('Username/Password incorrect!');
         }
     })
 };
 
 //  post register data 
-exports.register_data = function(req, res){
+exports.register_data = function(req, res, next){
     // prepare an object containing all user inputs.
     let userInput = {
         username: req.body.username,
@@ -59,32 +60,10 @@ exports.register_data = function(req, res){
     user.create(userInput, function(lastId) {
         // if the creation of the user goes well we should get an integer (id of the inserted user)
         if(lastId) {
-             //res.send('welcome' + userInput.first_name);
-            // Get the user data by it's id. and store it in a session.
-            user.find(lastId, function(result) {
-            req.session.user = result;
-            req.session.opp = 0;
-            res.redirect('/profile');
-             });
-
+            res.send('Welcome' + userInput.username);
         }else {
             console.log('Error creating a new user ...');
         }
     });
 };
 
-
-			
-//  Get logout page 
-exports.logout = function(req, res){
-    res.render('/', {title: "Log out" });
-    // Check if the session is exist
-    if(req.session.user) {
-        // destroy the session and redirect the user to the index page.
-        req.session.destroy(function() {
-            res.redirect('/');
-        });
-    }
-};
-
-//module.exports = router;
