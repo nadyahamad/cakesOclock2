@@ -18,11 +18,13 @@ exports.list = function(req, res){
 
             if (!categories[categoryId]) {
                 ucCategoryName = rows[i].cat_name[0].toUpperCase() + rows[i].cat_name.slice(1);
+                //slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.
                 categories[categoryId] = {
                     id: rows[i].cat_id,
                     name: ucCategoryName,
                     products: []
                 };
+                //array with push method adds one or more elements to the end of an array and returns the new length of the array.
                 categoriesWithProducts.push(categories[categoryId]);
             }
             categories[categoryId].products.push(rows[i]);
@@ -32,11 +34,11 @@ exports.list = function(req, res){
          //console.log(query.sql);
     });
 };
-
+//page not added yet
 exports.add = function(req, res){
   res.render('add_products',{page_title:"Add Product Item - Node.js"});
 };
-
+//page not added yet
 exports.edit = function(req, res){
     var id = req.params.id;
     req.getConnection(function(err,connection){
