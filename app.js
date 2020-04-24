@@ -117,10 +117,10 @@ app.get('/profile', registerjsfile.profile);
 //app.post('/profile/edit/:id',users.save_edit);
 
 //get users url
-//app.get('/users', users.list);
-//app.get('/users/edit/:id', users.edit);
-//app.post('/users/edit/:id',users.save_edit);
-//app.get('/users/delete/:id', users.delete_user);
+app.get('/users', users.list);
+app.get('/users/edit/:id', users.edit);
+app.post('/users/edit/:id',users.save_edit);
+app.get('/users/delete/:id', users.delete_user);
 
 
 

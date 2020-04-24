@@ -31,13 +31,13 @@ exports.login = function(req, res){
 
 
 exports.profile = function(req, res){
-    let user = req.session.user;
+    /*let user = req.session.user;
     if(user) {
         res.render('profile', {opp:req.session.opp, name:user.fullname});
         return;
     }
-    res.redirect('/');
-    //res.render('profile', {title: "Log in" });
+    res.redirect('/');*/
+    res.render('profile', {title: "Log in" });
     //res.send('this is the profile');
 };
 
