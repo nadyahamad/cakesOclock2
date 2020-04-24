@@ -1,40 +1,21 @@
 <%- include layouts/header.ejs %>
 <!-- main content -->
 <main class="content-faq">
-    
-    <h1 class="bottom-dotted text-center pt-1"> Hi User </h1>
-   
-    <!-- Login btn -->
-    <a href="/" class="btn-secondary" role="button" aria-pressed="true">
-        LOGOUT
+    <h1 class="bottom-dotted text-center pt-1">User Profile</h1>
+    <h2> Hi <%= name %> </h2>
+    <a class=" " href="/logout">
+        Logout 
     </a>
-
+                       
     <section class="accordion-user">
         <button class="accordion-title">
             <h2> Manage my account </h2>
         </button>
         <div class="accordion-body">
-           
-                
+
         </div>
     </section>
-    <section class="accordion-user">
-        <button class="accordion-title">
-            <h2> View my Orders </h2>
-        </button>
-        <div class="accordion-body">
-            <p class=faq>It depends on what you order.<br>
-    
-            Berry Cake: +1 day from purchase if you put it straight into the fridge <br>
-            ChocolateCake: +2 days from purchase if you keep it in the box and don’t put it in the fridge (unless of course, it’s 30 degrees outside, then you need to treat it like berry cake)<br>
-            Almond brownies: 3 months if you remove all decoration other than chocolate and wrap well in the fridge<br>
-            Cookies: 6 months if you remove all decoration and wrap in a sheet of greaseproof paper, tin foil and place in an airtight tin/tub
-    
-            </p>
-        </div>
-    <section class="accordion-user">      
-           
-    
+
 </main>
 <!-- main content -->
 <%- include layouts/footer.ejs %>

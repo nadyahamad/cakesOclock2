@@ -15,3 +15,13 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+
+var user = {
+  data: {
+      id: null,
+      username: null,
+  },
+};
+
+

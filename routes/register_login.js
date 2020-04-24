@@ -30,18 +30,6 @@ exports.login = function(req, res){
 };
 
 
-exports.profile = function(req, res){
-    let user = req.session.user;
-    if(user) {
-        res.render('profile', {opp:req.session.opp, name:user.fullname});
-        return;
-    }
-    res.redirect('/');
-    //res.render('profile', {title: "Log in" });
-    //res.send('this is the profile');
-};
-
-
 
 // Post login data 
 exports.login_data = function(req, res, next){
@@ -84,5 +72,16 @@ exports.register_data = function(req, res, next){
             console.log('Error creating a new user ...');
         }
     });
+};
+
+//Get logout page
+exports.loggout = function(req, res, next){
+    // Check if the session is exist
+    if(req.session.user) {
+        // destroy the session and redirect the user to the index page.
+        req.session.destroy(function() {
+            res.redirect('/');
+        });
+    }
 };
 
