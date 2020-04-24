@@ -3,7 +3,7 @@
  */
 
 var express = require('express');// Express to run server and routes
-//var session = require('express-session');
+var session = require('express-session');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
 var http = require('http');
@@ -88,7 +88,7 @@ app.use(
 
 );
 
-/* session
+session
 app.use(session({
   secret:'Cakes Oclock',
   resave: false,
@@ -97,7 +97,7 @@ app.use(session({
       maxAge: 60 * 1000 * 30
   }
 }));
-*/
+
 
 app.get('/', routes.index);
 //get register url
