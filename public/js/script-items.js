@@ -1,11 +1,12 @@
 var item = {
-    data: {
+    data: { //metadata
         id: null,
         price: null,
         quantity: 1,
     },
     //update price according to quantity selected
     updateViews: function() {
+        //Get the first element with a class of 'item-quantity', or undefined if there is no matching element:
         document.getElementsByClassName('item-quantity')[0].textContent = item.data.quantity;
         document.getElementById('product_size_price').textContent = item.data.price;
         document.getElementById('product_size_total').textContent = item.data.price * item.data.quantity;

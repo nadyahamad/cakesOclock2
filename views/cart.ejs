@@ -16,26 +16,26 @@
                     <td class="flex-container">
                     <div class ="cart-row">
                         <div class="img-table">
-                            <img src="/img/products/choco_cake.jpg"  class="img" alt="cake">
+                            <img %src% class="img" alt="%name%" title="%name%">
                         </div>
                         <div class="description-table">
-                            <h2 class="text-left">Chocolate Cake</h2>
+                            <h2 class="text-left">%name%</h2>
                             <h3> Allergen Information:</h3>
-                            <p class="text-justify">  Gluten (Wheat), Eggs, Milk, Sulphites</p>
-                            <p class="text-justify"> 8 - 10 portions</p>
+                            <p class="text-justify">  %allergen_info%</p>
+                            <p class="text-justify"> %size_name%</p>
                             <button id ='remove-cart' target="" class="btn-remove-cart" type ="button" aria-pressed="true">
                                 Remove from Cart</button> 
                         
                         <td class="qtycol">
                             <form class="pl-2">
                                 <button class="minus-btn" type="button" name="button">-</button>
-                                <span class="item-quantity" type = "number">0</span>
+                                <span class="item-quantity" type = "number">%quantity%</span>
                                 <button class="plus-btn" type="button" name="button">+</button>
                             </form>
                         </td>
                         <td>
                             <span class = "cart-price">
-                                <h3 class="text-center">€20</h3>
+                                <h3 class="text-center">€%price%</h3>
                             </span>
                         </td>
                         
