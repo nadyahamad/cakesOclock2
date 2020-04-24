@@ -3,7 +3,6 @@ const bcrypt = require('bcrypt');
 
 
 function User() {};
-
 User.prototype = {
     // Find the user data by id or username.
     find : function(user = null, callback)
@@ -11,7 +10,7 @@ User.prototype = {
         // if the user variable is defind
         if(user) {
             // if user = number return field = id, if user = string return field = username.
-            var field = Number.isInteger(user) ? 'id' : 'email';
+            var field = Number.isInteger(user) ? 'id' : 'username';
         }
         // prepare the sql query
         let sql = `SELECT * FROM users WHERE ${field} = ?`;
@@ -30,9 +29,8 @@ User.prototype = {
 
     // This function will insert data into the database. (create a new user)
     // body is an object 
-   /*create : function(body, callback) 
+    create : function(body, callback) 
     {
-
         var pwd = body.password;
         // Hash the password before insert it into the database.
         body.password = bcrypt.hashSync(pwd,10);
@@ -51,12 +49,12 @@ User.prototype = {
             // return the last inserted id. if there is no error
             callback(result.insertId);
         });
-    },*/
+    },
 
-    login : function(email, password, callback)
+    login : function(username, password, callback)
     {
         // find the user data by his username.
-        this.find(email, function(user) {
+        this.find(username, function(user) {
             // if there is a user by this username.
             if(user) {
                 // now we check his password.
