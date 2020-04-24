@@ -1,19 +1,12 @@
-<%- include layouts/header.ejs %>
+<%- include layouts/header2.ejs %>
 <!-- main content -->
 <main class="content-faq">
-    <h1 class="bottom-dotted text-center pt-1">User Profile</h1>
-    <h2> Hi <%= name %> </h2>
-    <a class=" " href="/logout">
-        Logout 
-    </a>
-                       
-    <section class="accordion-user">
-        <button class="accordion-title">
-            <h2> Manage my account </h2>
+    <h1 class="bottom-dotted text-center pt-1">Hi <%= name %></h1> 
+    <section class="content-user">
+        <button id="" class="headbutton1 mr-1" type="button" onclick="location.href='/users'">
+            Manage my Account
         </button>
-        <div class="accordion-body">
 
-        </div>
     </section>
 
 </main>
