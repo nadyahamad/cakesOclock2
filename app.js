@@ -145,17 +145,10 @@ app.post('/customers/edit/:id',customers.save_edit);
 app.get('/products', products.list);
 app.get('/items/:id', itemjsfile.items);
 //get cart url
-<<<<<<< HEAD
-app.get('/cart', cartjsfile.getCart);
-app.get('/location', locationjsfile.location);
-app.post('/add-to-cart',cartjsfile.addToCart);
-app.post('/delete-cart',cartjsfile.deleteInCart);
-=======
 app.get('/cart', cartjsfile.cart);
 app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
 app.get('/orders', ordersjsfile.orders);
->>>>>>> upstream/master
 
 app.use(app.router);
 
