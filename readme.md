@@ -1,18 +1,18 @@
 WebDevAppl - Cakes Oclock eCommerce
 
 ## Configuration
-Platform: node v13.9.0
-Framework: express
-Database: mysql squelize
-Testing: 
-Deployment: heroku
-AWS: ECR, ECS, EC2, RDS and ElasticCAche
+Platform: node v13.9.0,
+Framework: express,
+Database: mysql squelize,
+Testing: ,
+Deployment: heroku,
+AWS: ECR, ECS, EC2, RDS and ElasticCAche,
 app.js
 
         host: 'localhost',
         user: 'root',
         password : ******,
-        port : 3306, 
+        port : 4300, 
         database:'nodejs'
 
 ## APIs are divided in three types

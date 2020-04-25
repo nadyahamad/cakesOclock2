@@ -1,50 +1,56 @@
 /*
  * GET cart page.
  */
-//tatiana add code
 exports.cart = function(req, res){
 
-    var id = req.params.id;
-
-    req.getConnection(function(err,connection){
-
-        var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price FROM products p INNER JOIN product_size ps ON p.id = ps.product_id INNER JOIN sizes s ON s.id = ps.size_id WHERE p.id = ?'
-        var query = connection.query(queryStr, [id], function(err,rows)
-        {
-            if(err)
-                console.log("Error Selecting : %s ",err );
-
-       /*    var productWithSizes = {
-                prd_img: rows[0].prd_img,
-                name: rows[0].name,
-                description: rows[0].description,
-                allergen_info: rows[0].allergen_info,
-                sizes: []
-            };
-            for (var i = 0; i < rows.length; i++) {
-                productWithSizes.sizes.push({
-                    id: rows[i].ps_id,
-                    name: rows[i].size_name,
-                    price: rows[i].price
-                });
-            }*/
-
-            res.render('cart',{page_title:"Cart"/*, item: productWithSizes*/});
-        });
-
-    });
-};
-
-//Routes For calling shop_locations from table
-/*
-exports.cart = function(req, res){
     req.getConnection(function(err,connection) {
+
         connection.query('SELECT id, shop_location FROM shops',function(err,rows)
         {
+
             if(err)
                 console.log("Error Selecting : %s ",err );
+
             res.render('cart', {title: "Your Order", locations: rows });
         });
+
     });
 };
-*/
+
+exports.cart_items = function(req, res) {
+    var rawProductSizeIds = req.body;
+    if (!rawProductSizeIds || !(rawProductSizeIds instanceof Array)) {
+        res.status(400).json({ error: 'Item IDs should be an Array' });
+        return;
+    }
+    if (rawProductSizeIds.length === 0) {
+        res.status(200).json([]);
+        return;
+    }
+
+    req.getConnection(function(err, connection) {
+        if (err) {
+            console.log("Error Getting Connection : %s ", err);
+            res.status(500).json({ error: 'Error Getting Connection' });
+        }
+
+        var numericIds = [], numericId;
+        for (var i = 0, len = rawProductSizeIds.length; i < len; i++) {
+            numericId = Number(rawProductSizeIds[i]);
+            if (numericId > 0) {
+                numericIds.push(numericId);
+            }
+        }
+
+        var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price FROM products p INNER JOIN product_size ps ON p.id = ps.product_id INNER JOIN sizes s ON s.id = ps.size_id WHERE ps.id IN (?)';
+        connection.query(queryStr, [numericIds], function(err,rows) {
+            if (err) {
+                console.log("Error Executing Query : %s ", err);
+                res.status(500).json({ error: 'Error Executing Query' });
+            }
+
+            res.status(200).json(rows);
+        });
+
+    });
+};

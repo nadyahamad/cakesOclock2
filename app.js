@@ -34,6 +34,8 @@ var users = require('./routes/users');
 
 //load item route
 var itemjsfile = require('./routes/items');
+//load orders route
+var ordersjsfile = require('./routes/orders');
 
 // Start up an instance of app
 var app = express();
@@ -141,11 +143,12 @@ app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
 //get prd and item
 app.get('/products', products.list);
-app.get('/items/:id', itemjsfile.items)
+app.get('/items/:id', itemjsfile.items);
 //get cart url
 app.get('/cart', cartjsfile.cart);
-//app.post('/cart', cartjsfile.cart_items); <maybe needed for show selected items
+app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
+app.get('/orders', ordersjsfile.orders);
 
 app.use(app.router);
 

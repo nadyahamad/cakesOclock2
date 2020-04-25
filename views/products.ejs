@@ -7,7 +7,7 @@
         <!-- products large devices-->
         <div class="submenu">
             <% for (var i = 0; i < categories.length; i++) { %>
-                <button class="tablinks" onclick="openProduct(event, '<%= categories[i].name %>')" <%= i === 0 ? 'id=defaultOpen' : '' %>>
+                <button class="tablinks" onclick="openProduct(event, '<%= categories[i].name %>')" <%= i === 0 ? 'id=defaultOpen' : '' %>> 
                     <%= categories[i].name %>
                 </button>
                 <% } %>
