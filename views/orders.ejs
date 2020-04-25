@@ -1,41 +1,45 @@
 <%- include layouts/header.ejs %>
 
-    <!-- main content
+    <!-- main content -->
     <main class="">
-        <h1 class="tex-center"> Orders </h1>
-        <section class="container mb-1">
-            <table id="orders">
-                <thead>
+        <h1 class="tex-center"> Orders</h1>
+        <section class="content-user">
+            <table>
+                <tr>
+                    <th width="50px"> Username</th>
+                    <th> Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Action</th>
+                </tr>                   
+                <% if(data.length){             
+                    for(var i = 0;i < data.length;i++) { %>
                     <tr>
-                      <th>Order#</th>
-                      <th>Created On</th>
-                      <th>Status</th>
-                      <th></th>
+                        <td><%=data[i].username%></td>
+                        <td><%=data[i].fullname%></td>
+                        <td><%=data[i].email%></td>
+                        <td><%=data[i].phone%></td>
+                        <td>
+                           <a class="btn-secondary" href="../users/edit/<%=data[i].id%>">Edit</a>
+                           <a class="btn-secondary" href="../users/delete/<%=data[i].id%>">Delete</a>
+                          
+                        </td>
                     </tr>
-                  </thead>
-                 <tbody>
-                    <% totalOrders = 0 %>
-                    <% @orders.each do |order| %>
-                    
-                  <% if order.user.email == @user.email %>
-                  
-                    <% totalOrders += 1 %>
-                      <tr>
-                        <td><%= orders.id %></td>
-                        <td><%= orders.created_at %></td>
-                        <td><%= orders.status %></td>
-                        <td><button target="" class="btn-checkout" role="button" aria-pressed="true"><%= link_to 'Show', order %></button></td>
-                      </tr>
-                    <% end %>
-                    <% end %>
-                    
-                    <% if totalOrders == 0 %>
+                <% }
+                }else{ %>
                     <tr>
-                      <td colspan="3">No orders to display</td>
+                       <td colspan="3">No user</td>
                     </tr>
-                    <% end %>
-                  </tbody>
+               <% } %>    
             </table>
+            <div class="container">
+                <a href="/register" target="" class="btn-secondary" role="button" aria-pressed="true">
+                    Add User
+                </a>
+            </div>
+    
         </section>
-    </main> -->
-   <%- include layouts/footer.ejs %>
+    
+    </main>
+
+   <%- include('layouts/footer.ejs', { pageScript: 'script-cart.js' }) %>
