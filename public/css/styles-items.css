@@ -50,7 +50,27 @@ button[class*=plus-btn]{
     border: none;
     cursor: pointer;
 }
-    
+/*Add to Cart Btn*/
+
+.btn-add-to-cart {
+    background-color: #230D0C;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 300;
+    margin: 0px;
+    padding: 10px 25px;
+    border-radius: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 1px 1px 2px #675151;
+}
+  
+.btn-add-to-cart:hover{
+    background-color: #664B4B;
+    color:#fff;
+    font-weight: 500;
+}
 /*Price*/
 .box-price{
     padding-left: 35px;

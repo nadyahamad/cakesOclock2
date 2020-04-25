@@ -42,7 +42,11 @@ exports.cart_items = function(req, res) {
             }
         }
 
-        var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price FROM products p INNER JOIN product_size ps ON p.id = ps.product_id INNER JOIN sizes s ON s.id = ps.size_id WHERE ps.id IN (?)';
+        var queryStr = 'SELECT p.*, s.name size_name, ps.id ps_id, ps.price price \
+        FROM products p \
+        INNER JOIN product_size ps ON p.id = ps.product_id \
+        INNER JOIN sizes s ON s.id = ps.size_id \
+        WHERE ps.id IN (?)';
         connection.query(queryStr, [numericIds], function(err,rows) {
             if (err) {
                 console.log("Error Executing Query : %s ", err);
