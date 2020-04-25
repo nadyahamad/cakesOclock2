@@ -9,6 +9,7 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 
+var mysql = require('mysql')
 
 
 var methodOverride = require('method-override')
@@ -29,7 +30,7 @@ var registerjsfile = require('./routes/register_login');
 //load user route
 var profilejsfile = require('./routes/profile');
 
-//load customers route
+//load users route
 var users = require('./routes/users');
 
 //load item route
@@ -37,8 +38,11 @@ var itemjsfile = require('./routes/items');
 //load orders route
 var ordersjsfile = require('./routes/orders');
 
-//load checkout roat 
+//load checkout route 
 var checkoutjsfile  = require('./routes/checkout');
+
+//load adminproducts route 
+var adminproducts  = require('./routes/adminproducts');
 
 // Start up an instance of app
 var app = express();
@@ -151,7 +155,18 @@ app.get('/items/:id', itemjsfile.items);
 app.get('/cart', cartjsfile.cart);
 app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
+
+app.get ('/checkout', checkoutjsfile.checkout);
+
 app.get('/orders', ordersjsfile.orders);
+
+//get adminproducts url
+app.get('/adminproducts', adminproducts.list);
+//app.get('/adminproducts/add', adminproducts.add);
+//app.post('/adminproducts/add', adminproducts.save);
+//app.get('/adminproducts/edit/:id', adminproducts.edit);
+//app.post('/adminproducts/edit/:id',adminproducts.save_edit);
+//app.get('/adminproducts/delete/:id', adminproducts.delete_user);
 
 app.use(app.router);
 
