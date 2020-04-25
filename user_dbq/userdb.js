@@ -1,5 +1,6 @@
 const pool = require('./pool');
 const bcrypt = require('bcrypt');
+const passport = require('passport');
 
 
 function User() {};
@@ -67,9 +68,16 @@ User.prototype = {
             // if the username/password is wrong then return null.
             callback(null);
         });
-        
     }
-
 }
+
+passport.serializeUser(function(user, done) {
+    done(null, user.id);
+});
+   
+passport.deserializeUser(function(id, done) {
+    done(err, user);
+});
+
 
 module.exports = User;

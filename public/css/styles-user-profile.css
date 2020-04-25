@@ -2,63 +2,101 @@
 --------------------------------------------------------*/
 
 table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
 }
 
 td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+	background-color: #dddddd;
 }
-  .content-user{
-    width: 80%;
-    margin: auto;
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
 
-  .accordion-title{
-    background-color: #F1EFEF;
-    color: #230D0C;
-    border:.5px solid #C7BFBF;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 10px;
-    width: 100%;
-    margin: auto;
-    outline: none;
-    transition: 0.4s;
-    box-shadow: 2px 2px 2px #675151;
-  }
+.content-user{
+	width: 80%;
+	margin: auto;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
 
-  .accordion-title:hover {
-    background-color: #fff;
-    color: #ED3D3D;
-    border: 5px dotted #ED3D3D;
-  }
+.card-img{
+	background-color: #F1EFEF;
+	height: 120px;
+}
 
-  .accordion-title:active {
+/* icon */
+i.card-icon {
+	border: none;
+	color: #230D0C;
+	margin: auto;
+	margin-top: 30px;
+	font-size: 5rem;
+	cursor: pointer;
+}
+
+.btn-card{
+    background-color: #ED3D3D;
+    color: #F1EFEF;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 0px;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+	display: inline-block;
+	border-top: 3px dotted #F1EFEF;
+	height: 80px;
+	width: 100%;
+}
+
+.btn-card:hover{
     background-color: #230D0C;
-    color: #ED3D3D;
-    border: 5px dotted #230D0C;
-  }
+    color: #fff;
+	font-weight: 500;
+}
 
 
-  .accordion-body{
-    padding: 0 18px;
-    background-color: #F1EFEF;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    font-weight: 600;
-    font-size: .8rem;
-    color: #230D0C;
-    border-radius: 4px;
-    border: 1px solid #230D0C;
-  }
+.accordion-title{
+	background-color: #F1EFEF;
+	color: #230D0C;
+	border:.5px solid #C7BFBF;
+	border-radius: 4px;
+	cursor: pointer;
+	padding: 10px;
+	width: 100%;
+	margin: auto;
+	outline: none;
+	transition: 0.4s;
+	box-shadow: 2px 2px 2px #675151;
+}
+
+.accordion-title:hover {
+	background-color: #fff;
+	color: #ED3D3D;
+	border: 5px dotted #ED3D3D;
+}
+
+.accordion-title:active {
+	background-color: #230D0C;
+	color: #ED3D3D;
+	border: 5px dotted #230D0C;
+}
+
+
+.accordion-body{
+	padding: 0 18px;
+	background-color: #F1EFEF;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+	font-weight: 600;
+	font-size: .8rem;
+	color: #230D0C;
+	border-radius: 4px;
+	border: 1px solid #230D0C;
+}
