@@ -1,34 +1,29 @@
 <%- include layouts/header.ejs %>
 <!-- main content -->
-<main class="content-faq">
-    <h1 class="bottom-dotted text-center pt-1">User Profile</h1>
-    <section class="accordion-user">
-        <button class="accordion-title">
-            <h2> Manage my account </h2>
-        </button>
-        <div class="accordion-body">
-            <form method="post" action='/users/edit/<%=data[0].id%>'>
-                <div class="padding-1">
-                    <label>Username</label>
-                    <input type= "text" name ="username" placeholder="username" class ="form-inputs" value="<%=data[0].username%>" />
-                </div>
-                <div class="padding-1">
-                    <label>Full Name</label>
-                    <input type= "text" name ="fullname" placeholder="Full Name" class ="form-inputs" value="<%=data[0].fullname%>" />
-                </div>
-                <div class="padding-1">
-                    <label>Email</label>
-                    <input type= "email" name ="email" placeholder="Email" class ="form-inputs" value="<%=data[0].email%>" autocomplete required/>
-                </div>
-                <div class="padding-1">
-                    <label>Phone</label>
-                    <input type= "text" name ="phone" placeholder="Phone" class ="form-inputs" value="<%=data[0].phone%>" autocomplete required/>
-                </div>
-                <div class="padding-1 container">
-                    <input type="submit" name="submit" value="Save" class="form-btn" >
-                </div>   
-            </form>
-        </div>
+<main class="content-user">
+    <h1 class="bottom-dotted text-center pt-1 mb-1">User Edit</h1>
+    <section class="form-card">
+        <form method="post" action='/users/edit/<%=data[0].id%>'>
+            <div class="padding-1">
+                <label>Username</label>
+                <input type= "text" name ="username" placeholder="username" class ="form-inputs" value="<%=data[0].username%>" />
+            </div>
+            <div class="padding-1">
+                <label>Full Name</label>
+                <input type= "text" name ="fullname" placeholder="Full Name" class ="form-inputs" value="<%=data[0].fullname%>" />
+            </div>
+            <div class="padding-1">
+                <label>Email</label>
+                <input type= "email" name ="email" placeholder="Email" class ="form-inputs" value="<%=data[0].email%>" autocomplete required/>
+            </div>
+            <div class="padding-1">
+                <label>Phone</label>
+                <input type= "text" name ="phone" placeholder="Phone" class ="form-inputs" value="<%=data[0].phone%>" autocomplete required/>
+            </div>
+            <div class="padding-1 container">
+                <input type="submit" name="submit" value="Save" class="form-btn" >
+            </div>   
+        </form>
     </section>
 
 </main>

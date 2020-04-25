@@ -41,6 +41,8 @@ main{
     height: 400px;
     text-align: center;
     padding-top: 40px;
+    /*background-position: right; */
+    background-size: cover;
 }
 
 /* heading style for Home Page Banner large size devices*/
