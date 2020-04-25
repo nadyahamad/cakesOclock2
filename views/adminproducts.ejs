@@ -26,7 +26,7 @@
                     <td><%=data[i].cat_id%></td>
                     <td><%=data[i].prd_img%></td>
                     <td>
-                       <a class="btn-secondary" href="../products_admin/edit/<%=data[i].id%>">Edit</a>
+                       <a class="btn-secondary" href="../productsadmin/edit/<%=data[i].id%>">Edit</a>
                        <a class="btn-secondary" href="../users/delete/<%=data[i].id%>">Delete</a>
                       
                     </td>
@@ -39,7 +39,7 @@
            <% } %>    
         </table>
         <div class="container">
-            <a href="/register" target="" class="btn-secondary" role="button" aria-pressed="true">
+            <a href="/adminproducts/add" target="" class="btn-secondary" role="button" aria-pressed="true">
                 Add New Product
             </a>
         </div>
