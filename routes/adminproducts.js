@@ -18,7 +18,7 @@
 };
 
 exports.add = function(req, res){
-    res.render('add_product',{page_title:"Add products - Node.js"});
+    res.render('add_admin_product',{page_title:"Add products - Node.js"});
   };
   
   exports.edit = function(req, res){
@@ -33,7 +33,7 @@ exports.add = function(req, res){
               if(err)
                   console.log("Error Selecting : %s ",err );
        
-              res.render('edit_product',{page_title:"Edit products - Node.js",data:rows});
+              res.render('edit_admin_product',{page_title:"Edit products - Node.js",data:rows});
                   
              
            });
