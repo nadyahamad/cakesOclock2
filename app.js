@@ -4,6 +4,7 @@
 
 var express = require('express');// Express to run server and routes
 var session = require('express-session');
+var passport = require('passport');
 var bodyParser = require('body-parser');
 var routes = require('./routes');
 var http = require('http');
@@ -97,7 +98,7 @@ app.use(
 
 );
 
-session
+//session
 app.use(session({
   secret:'Cakes Oclock',
   resave: false,
@@ -107,6 +108,14 @@ app.use(session({
   }
 }));
 
+//passport - Authentication
+app.use(passport.initialize());
+app.use(passport.session());
+
+/*app.use(function (req, res, next){
+  res.locals.isAuthenticated = req.isAuthenticated();
+  net()
+});*/
 
 app.get('/', routes.index);
 //get register url
@@ -155,10 +164,14 @@ app.get('/items/:id', itemjsfile.items);
 app.get('/cart', cartjsfile.cart);
 app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
+<<<<<<< HEAD
 
 app.get ('/checkout', checkoutjsfile.checkout);
 
 app.get('/orders', ordersjsfile.orders);
+=======
+app.get('/order', ordersjsfile.orders);
+>>>>>>> upstream/master
 
 //get adminproducts url
 app.get('/adminproducts', adminproducts.list);

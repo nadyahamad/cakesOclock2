@@ -1,11 +1,58 @@
-<%- include layouts/header2.ejs %>
+<%- include layouts/header.ejs %>
 <!-- main content -->
 <main class="content-faq">
     <h1 class="bottom-dotted text-center pt-1">Hi <%= name %></h1> 
     <section class="content-user">
-        <button id="" class="headbutton1 mr-1" type="button" onclick="location.href='/users'">
-            Manage my Account
-        </button>
+        <h2>Admin</h2>
+        <div class="container">
+            <!-- Admin card -->
+            <div class="product-card">
+                <div class="card-img">
+                    <i class="material-icons card-icon">supervisor_account</i>
+                </div>
+                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                   Manage Users Accounts
+                </a>
+            </div>
+            <!-- User card -->
+            <div class="product-card">
+                <div class="card-img">
+                    <i class="material-icons card-icon">store</i>
+                </div>
+                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                    Manage Products
+                </a>
+            </div>
+            <!-- Order card -->
+            <div class="product-card">
+                <div class="card-img">
+                    <i class="material-icons card-icon">assignment</i>
+                </div>
+                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                    Manage Orders
+                </a>
+            </div>
+        </div>
+        <h2>My Account</h2>
+        <div class="container">
+            <div class="product-card">
+                <div class="card-img">
+                    <i class="material-icons card-icon">person</i>
+                </div>
+                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                   Manage my Account
+                </a>
+            </div>
+            <div class="product-card">
+                <div class="card-img">
+                    <i class="material-icons card-icon">shopping_basket</i>
+                </div>
+                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                   Manage my orders
+                </a>
+            </div>
+
+        </div>
 
     </section>
 
