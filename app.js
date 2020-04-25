@@ -112,10 +112,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*app.use(function (req, res, next){
+app.use(function (req, res, next){
   res.locals.isAuthenticated = req.isAuthenticated();
-  net()
-});*/
+  next()
+});
 
 app.get('/', routes.index);
 //get register url
