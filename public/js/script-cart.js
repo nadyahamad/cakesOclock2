@@ -10,27 +10,10 @@ var cart = {
       return;
     }
 
-<<<<<<< HEAD
-console.log('it works') /*check to see js is inserted correctly*/
-
-if (document.readyState == 'loading') {
-  document.addEventListener('DOMContentLoaded', ready)
-} else {
-  ready()
-}
-
-  function ready() {
-    var removeCartItemButtons = document.getElementsByClassName('btn-remove-cart')
-    console.log(removeCartItemButtons);
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
-=======
     var itemTemplateEl = document.getElementById('product-template');
     if (!itemTemplateEl) {
       console.log('Item template is missing');
       return;
->>>>>>> upstream/master
     }
     cart.itemTemplateEl = itemTemplateEl.cloneNode();
     cart.itemTemplate = itemTemplateEl.innerHTML;

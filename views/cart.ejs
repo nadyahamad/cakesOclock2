@@ -1,13 +1,7 @@
-<%- include('layouts/header.ejs')%>
+<%- include layouts/header.ejs %>
 
     <!-- main content -->
     <main class="">
-        <% if (cart === null || cart.item.length == 0) {%>
-
-            <h2>No item in shopping Cart</h2>
-
-            <%} else {%>
-
         <h1 class="tex-center"> Your Order </h1>
         <h2 id="loading_indicator" class="tex-center">Loading...</h2>
         <h2 id="empty_indicator" style="display:none;" class="tex-center">... is empty - yet!</h2>
@@ -18,49 +12,6 @@
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
-<<<<<<< HEAD
-                <tr> 
-                <div class= "cart-items">
-                <tr>
-               
-
-                    <td class="flex-container">
-                    <div class ="cart-row">
-                    
-                         <div class="img-table">
-                            <img src="/img/products/<%= item.img_src %>.jpg"
-                             class="img"
-                             title="<%= item.name %>"
-                             alt="<%= item.name %>"/>
-                        </div>
-                        <div class="description-table">
-                            <h2 class="text-left"><%= item.name %></h2>
-                            <h3><%= item.allergen_info %></h3>
-                            <p class="text-justify"> <%= item.description %></p>
-                            <p class="text-justify"> 8 - 10 portions</p>
-                            <button id ='remove-cart' target="" class="btn-remove-cart" type ="button" aria-pressed="true">
-                                Remove from Cart</button> 
-                        
-                        <td>
-                            <form class="pl-2">
-                                <button class="minus-btn" type="button" name="button">-</button>
-                                <span class="item-quantity" type = "number">0</span>
-                                <button class="plus-btn" type="button" name="button">+</button>
-                            </form>
-                          </td>
-                        <td>
-                            <span class = "cart-price">
-                                <h3 class="text-center"><%= item.price %></h3>
-                            </span>
-                        </td>
-                        <%} %>
-                      </div>
-                    </div>
-                      </td> 
-  
-            </div>
-          </tr>
-=======
                 <tr id="product-template">
                     <td class="flex-container">
                         <div class="img-table">
@@ -86,7 +37,6 @@
                         <h4 class="text-center">€%price%</h4>
                     </td>
                 </tr>
->>>>>>> upstream/master
             </table>
             <div class="payment-box">
                 <div class="payment-card">
@@ -121,7 +71,6 @@
                 </a>
             </div>
         </section>
-        
     </main>
 
    <%- include('layouts/footer.ejs', { pageScript: 'script-cart.js' }) %>
