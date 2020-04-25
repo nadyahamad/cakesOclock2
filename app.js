@@ -38,6 +38,9 @@ var itemjsfile = require('./routes/items');
 //load orders route
 var ordersjsfile = require('./routes/orders');
 
+//load checkout roat 
+var checkoutjsfile  = require('./routes/checkout');
+
 // Start up an instance of app
 var app = express();
 
