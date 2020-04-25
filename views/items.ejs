@@ -3,7 +3,7 @@
 <section class="container-items margin">
     <div class="product-img">
         <!--test image but should be called from  db-->
-        <img src="/img/products/<%= item.img_src %>.jpg"
+        <img src="/img/products/<%= item.prd_img %>"
         class="img" 
         title="<%= item.name %>"
         alt="<%= item.name %>" />
@@ -24,14 +24,21 @@
             <div class="flex-container">
                 <div class="sizes-units">
                     <h3>Cakes sizes</h3>
-                    <label class="ml-1"> <input type="radio" name="cake-size" value = "6'" class="mr-1 mb-1" checked>8-10 Portions</label>
+                   <!-- <label class="ml-1"> <input type="radio" name="cake-size" value = "6'" class="mr-1 mb-1" checked>8-10 Portions</label>
                     <br/>
                     <label  class="ml-1"><input type="radio" name="cake-size" value="8'" class="mr-1 mb-1">12-14 Portions</label>
                     <br/>
                     <label  class="ml-1"><input type="radio" name="cake-size" value="9'" class="mr-1 mb-1">16-18 Portions</label>
                     <br/>
                     <label  class="ml-1"><input type="radio" name="cake-size" value="10'" class="mr-1 mb-1">20-22 Portions</label>
-                    <br/>
+                    <br/>-->
+                    <% for (var i = 0; i < item.sizes.length; i++) { %>
+                        <label class="ml-1">
+                            <input type="radio" class="mr-1 mb-1" name="cake-size"
+                                data-id="<%= item.sizes[i].id %>"
+                                value="<%= item.sizes[i].price %>" /><%= item.sizes[i].name %></label>
+                        <br/>
+                    <% } %>
                 </div>
                 <div class="">
                     <h3>Quantity</h3>
@@ -42,7 +49,10 @@
                    <!--Test Price-->
                     <div class="box-price">
                         <h3 class="text-left">Price</h3>
-                        <h4 class="price-text">€<%= item.price %></h4>
+                        <!--<h4 class="price-text">€<%= item.price %></h4>-->
+                        <h4 class="price-text">€<span id="product_size_price"><%= item.sizes[0].price %></span></h4>
+                        <h3 class="text-left">Total</h3>
+                        <h4 class="price-text">€<span id="product_size_total"><%= item.sizes[0].price %></span></h4>
                     </div>
                 
                 </div>
@@ -51,11 +61,17 @@
 
             <div class="pl-1 items-btn">
                 <!--test btn but should be calling cart page-->
+<<<<<<< HEAD
                 <form action="/add-to-cart" method = "POST" >
                     <input type="hidden" name="id" value="<%=item.id%>">   
                 <button type = "submit"  class="btn-add-to-cart" role="button" aria-pressed="true">
                     ADD TO CART </button>
                 
+=======
+                <a id="add_to_cart" href="/cart" target="" class="btn-secondary" role="button" aria-pressed="true">
+                    ADD TO CART
+                </a>
+>>>>>>> upstream/master
                 <a href="/products" target="" class="btn-secondary" role="button" aria-pressed="true">
                     BACK
                 </a>
@@ -64,4 +80,8 @@
     </div>
 </section>
 
+<<<<<<< HEAD
 <%- include layouts/footer.ejs %>
+=======
+<%- include('layouts/footer.ejs', { pageScript: 'script-items.js' }) %>
+>>>>>>> upstream/master

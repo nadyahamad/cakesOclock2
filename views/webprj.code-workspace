@@ -8,6 +8,15 @@
 		},
 		{
 			"path": "../../../../../Downloads/GroupC_donuthut/donuthut_latest"
+		},
+		{
+			"path": "../../../mozilla_dev"
+		},
+		{
+			"path": "../../shopping-cart"
+		},
+		{
+			"path": "../../oreillynode"
 		}
 	],
 	"settings": {}

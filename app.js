@@ -4,7 +4,7 @@
 
 var express = require('express');// Express to run server and routes
 var session = require('express-session');
-var bodyParser = require('body-Parser');
+var bodyParser = require('body-parser');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
@@ -24,16 +24,18 @@ var cartjsfile  = require('./routes/cart');
 var locationjsfile  = require('./routes/location');
 
 //load register route
-var registerjsfile = require('./routes/register');
+var registerjsfile = require('./routes/register_login');
 
 //load user route
-//var profilejsfile = require('./routes/profile');
+var profilejsfile = require('./routes/profile');
 
 //load customers route
 var users = require('./routes/users');
 
 //load item route
 var itemjsfile = require('./routes/items');
+//load orders route
+var ordersjsfile = require('./routes/orders');
 
 // Start up an instance of app
 var app = express();
@@ -43,8 +45,10 @@ var mysql = require('mysql');
 
 // all environments
 app.set('port', process.env.PORT || 4300);
+// Set directory to contain the templates ('views')
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+// Set view engine to use, in this case 'ejs'
+app.set('view engine', 'ejs'); //rendering data
 //app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.json());
@@ -86,7 +90,7 @@ app.use(
 
 );
 
-// session
+session
 app.use(session({
   secret:'Cakes Oclock',
   resave: false,
@@ -96,22 +100,23 @@ app.use(session({
   }
 }));
 
+
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-app.post('/profile', registerjsfile.register_data);
+app.post('/register_data', registerjsfile.register_data);
 
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/login/data',registerjsfile.login_data);
+app.post('/login_data',registerjsfile.login_data);
 
 //get logout url
-app.get('/logout', registerjsfile.logout);
+app.get('/logout', registerjsfile.loggout);
 
 //get user url
-app.get('/profile', registerjsfile.profile);
-app.get('/profile/edit/:id', users.edit);
-app.post('/profile/edit/:id',users.save_edit);
+app.get('/profile', profilejsfile.profile);
+//app.get('/profile/:id', profilejsfile.profile_edit);
+//app.post('/profile/edit/:id',users.save_edit);
 
 //get users url
 app.get('/users', users.list);
@@ -131,18 +136,26 @@ app.get('/faq', staticjsfile.faq);
 app.get('/cookie_policy', staticjsfile.cpolicy);
 
 app.get('/customers', customers.list);
-app.get('/products', products.list);
 app.get('/customers/add', customers.add);
 app.post('/customers/add', customers.save);
 app.get('/customers/delete/:id', customers.delete_customer);
 app.get('/customers/edit/:id', customers.edit);
 app.post('/customers/edit/:id',customers.save_edit);
-app.get('/items/:id', itemjsfile.items)
+//get prd and item
+app.get('/products', products.list);
+app.get('/items/:id', itemjsfile.items);
 //get cart url
+<<<<<<< HEAD
 app.get('/cart', cartjsfile.getCart);
 app.get('/location', locationjsfile.location);
 app.post('/add-to-cart',cartjsfile.addToCart);
 app.post('/delete-cart',cartjsfile.deleteInCart);
+=======
+app.get('/cart', cartjsfile.cart);
+app.post('/cart', cartjsfile.cart_items);
+app.get('/location', locationjsfile.location);
+app.get('/orders', ordersjsfile.orders);
+>>>>>>> upstream/master
 
 app.use(app.router);
 

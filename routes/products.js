@@ -1,33 +1,32 @@
 /*
  * GET products listing.
  */
-var imageMappings = require('../mappings/images');
-
 exports.list = function(req, res){
   req.getConnection(function(err,connection){
        
-        var query = connection.query('SELECT * FROM products INNER JOIN categories USING (cat_id)',function(err,rows)
+        var queryString = 'SELECT p.*, c.cat_name cat_name, MIN(ps.price) min_price FROM products p INNER JOIN categories c USING (cat_id) INNER JOIN product_size ps ON ps.product_id = p.id GROUP BY ps.product_id';
+        var query = connection.query(queryString, function(err,rows)
         {
             if(err)
             console.log("Error Selecting : %s ",err );
 
             var categoriesWithProducts = [];
             var categories = {};
-            var categoryId, ucCategoryName, productImageSrc;
+            var categoryId, ucCategoryName;
             for (var i = 0; i < rows.length; i++) {
             categoryId = rows[i].cat_id;
 
             if (!categories[categoryId]) {
                 ucCategoryName = rows[i].cat_name[0].toUpperCase() + rows[i].cat_name.slice(1);
+                //slice() method returns a shallow copy of a portion of an array into a new array object selected from begin to end (end not included) where begin and end represent the index of items in that array. The original array will not be modified.
                 categories[categoryId] = {
                     id: rows[i].cat_id,
                     name: ucCategoryName,
                     products: []
                 };
+                //array with push method adds one or more elements to the end of an array and returns the new length of the array.
                 categoriesWithProducts.push(categories[categoryId]);
             }
-            productImageSrc = rows[i].name.toLowerCase().replace(/ /g, '_');
-            rows[i].img_src = imageMappings[productImageSrc] || productImageSrc;
             categories[categoryId].products.push(rows[i]);
         }
             res.render('products',{page_title:"Customers - Node.js", data: [], categories: categoriesWithProducts });
@@ -35,11 +34,11 @@ exports.list = function(req, res){
          //console.log(query.sql);
     });
 };
-
+//page not added yet
 exports.add = function(req, res){
   res.render('add_products',{page_title:"Add Product Item - Node.js"});
 };
-
+//page not added yet
 exports.edit = function(req, res){
     var id = req.params.id;
     req.getConnection(function(err,connection){

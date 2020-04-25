@@ -9,13 +9,16 @@
             <%} else {%>
 
         <h1 class="tex-center"> Your Order </h1>
-        <section class="container mb-1">
+        <h2 id="loading_indicator" class="tex-center">Loading...</h2>
+        <h2 id="empty_indicator" style="display:none;" class="tex-center">... is empty - yet!</h2>
+        <section style="display:none;" class="container mb-1">
             <table id="checkout-products">
                 <tr>
                     <th>Product</th>
                     <th>Quantity</th>
                     <th>Price</th>
                 </tr>
+<<<<<<< HEAD
                 <tr> 
                 <div class= "cart-items">
                 <tr>
@@ -57,33 +60,68 @@
   
             </div>
           </tr>
+=======
+                <tr id="product-template">
+                    <td class="flex-container">
+                        <div class="img-table">
+                            <img %src% class="img" alt="%name%" title="%name%"> <!---->
+                        </div>
+                        <div class="description-table">
+                            <h2 class="text-left">%name%</h2>
+                            <h3> Allergen Information:</h3>
+                            <p class="text-justify">%allergen_info%</p>
+                            <p class="text-justify">%size_name%</p>
+                            <a href="javascript:void(0)" target="" class="btn-secondary" role="button" aria-pressed="true">
+                             Remove from Cart</a>
+                        </div>
+                    </td>
+                    <td>
+                        <form class="pl-2">
+                            <button class="minus-btn" type="button" name="button">-</button>
+                            <span class="item-quantity">%quantity%</span>
+                            <button class="plus-btn" type="button" name="button">+</button>
+                        </form>
+                    </td>
+                    <td>
+                        <h4 class="text-center">€%price%</h4>
+                    </td>
+                </tr>
+>>>>>>> upstream/master
             </table>
-            <div class="location-box">
+            <div class="payment-box">
                 <div class="payment-card">
                     <h2 class="text-center product-name mb-1 pb-1">Choose Pick Up Location</h2>
 
-                        <select id="location" name = "location" class="mt-1">  </select>
+                        <select id="location" name = "location" class="mt-1">
+                        <% for (var i = 0, len = locations.length; i < len; i++) { %>
+                            <option value="<%= locations[i].id %>"><%= locations[i].shop_location %></option>
+                        <% } %>
+                        </select>
                 </div>
-                <div class="cart-total mt-2">
+                <div class="payment-card mt-2">
                     <h2 class="text-center product-name mb-1 pb-1">Cart Total</h2>
-                    <h3 class="price-text mb-1">€0</h3>
+                    <h3 class="price-text mb-1">€<span id="cart_total">0</span></h3>
                 </div>
             </div>
         </section>
-        <section class="container mb-1">
+        <section style="display:none" class="container mb-1">
             <div class="mr-1">
-               
-                <button target="" class="btn-checkout" role="button" aria-pressed="true">
+                <a href="javascript:void(0);" id="checkout_btn" target="" class="btn-secondary" role="button" aria-pressed="true">
                     CONTINUE TO CHECKOUT
-                </button>
+                </a>
             </div>
             <div class="mr-1">
-                <button target="" class="btn-empty-cart" role="button" aria-pressed="true">
+                <a href="javascript:void(0);" id="empty_cart_btn" target="" class="btn-secondary" role="button" aria-pressed="true">
                     EMPTY CART
-                </button>
+                </a>
+            </div>
+            <div class="mr-1">
+                <a href="/products" target="" class="btn-secondary" role="button" aria-pressed="true">
+                    KEEP SHOPPING
+                </a>
             </div>
         </section>
         
     </main>
 
-   <%- include layouts/footer.ejs %>
+   <%- include('layouts/footer.ejs', { pageScript: 'script-cart.js' }) %>
