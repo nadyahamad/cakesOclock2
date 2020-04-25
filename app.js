@@ -164,8 +164,6 @@ app.get('/items/:id', itemjsfile.items);
 app.get('/cart', cartjsfile.cart);
 app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
-
-
 app.get ('/checkout', checkoutjsfile.checkout);
 app.get('/orders', ordersjsfile.orders);
 
