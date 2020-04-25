@@ -6,19 +6,19 @@
         <form method="post" action='/users/edit/<%=data[0].id%>'>
             <div class="padding-1">
                 <label>Name</label>
-                <input type= "text" name ="username" placeholder="username" class ="form-inputs" value="<%=data[0].name%>" />
+                <input type= "text" name ="username" placeholder="name" class ="form-inputs" value="<%=data[0].name%>" />
             </div>
             <div class="padding-1">
                 <label>Description</label>
-                <input type= "text" name ="fullname" placeholder="Full Name" class ="form-inputs" value="<%=data[0].description%>" />
+                <input type= "text" name ="fullname" placeholder="description" class ="form-inputs" value="<%=data[0].description%>" />
             </div>
             <div class="padding-1">
                 <label>Allergen Info</label>
-                <input type= "email" name ="email" placeholder="Email" class ="form-inputs" value="<%=data[0].allergen_info%>" autocomplete required/>
+                <input type= "text" name ="allergen_info" placeholder="allergen" class ="form-inputs" value="<%=data[0].allergen_info%>" autocomplete required/>
             </div>
             <div class="padding-1">
                 <label>Category</label>
-                <input type= "text" name ="phone" placeholder="Phone" class ="form-inputs" value="<%=data[0].cat_id%>" autocomplete required/>
+                <input type= "number" name ="phone" placeholder="Category" class ="form-inputs" value="<%=data[0].cat_id%>" autocomplete required/>
             </div>
             <div class="padding-1 container">
                 <input type="submit" name="submit" value="Save" class="form-btn" >
