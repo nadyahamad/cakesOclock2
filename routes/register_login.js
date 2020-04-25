@@ -7,6 +7,8 @@ const user = new User();
 
 // Get register page.
 exports.register = function(req, res){
+    console.log(req.user);
+    console.log(req.isAuthenticated());
     let user = req.session.user;
     //if there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
     if(user) {
@@ -19,6 +21,8 @@ exports.register = function(req, res){
 
 //  Get login page 
 exports.login = function(req, res){
+    console.log(req.user);
+    console.log(req.isAuthenticated());
     let user = req.session.user;
     //if there is a session named user that means the use is logged in. so we redirect him to home page by using /home route below
     if(user) {
@@ -84,4 +88,5 @@ exports.loggout = function(req, res, next){
         });
     }
 };
+
 
