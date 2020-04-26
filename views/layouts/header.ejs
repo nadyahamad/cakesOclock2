@@ -37,7 +37,7 @@
 	        </div>
 	        <!-- register, login and cart  -->
 	        <div class="col-4 right mt-1">
-                <% if(isAuthenticated) { %>
+                <% if(typeof isAuthenticated === 'true') { %>
                 <!-- register btn -->
 	        	<button class="headbutton2 mr-1" type="button" onclick="location.href='/profile'">
 	        		PROFILE

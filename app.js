@@ -39,7 +39,7 @@ var users = require('./routes/users');
 //load item route
 var itemjsfile = require('./routes/items');
 //load orders route
-var ordersjsfile = require('./routes/orders');
+//var ordersjsfile = require('./routes/orders');
 
 //load checkout route 
 var checkoutjsfile  = require('./routes/checkout');
@@ -167,7 +167,7 @@ app.get('/cart', cartjsfile.cart);
 app.post('/cart', cartjsfile.cart_items);
 app.get('/location', locationjsfile.location);
 app.get ('/checkout', checkoutjsfile.checkout);
-app.get('/orders', ordersjsfile.orders);
+
 
 //get adminproducts url
 app.get('/adminproducts', adminproducts.list);
@@ -175,7 +175,7 @@ app.get('/adminproducts/add', adminproducts.add);
 app.post('/adminproducts/add', adminproducts.save);
 app.get('/adminproducts/edit/:id', adminproducts.edit);
 app.post('/adminproducts/edit/:id',adminproducts.save_edit);
-//app.get('/adminproducts/delete/:id', adminproducts.delete_user);
+app.get('/adminproducts/delete/:id', adminproducts.delete_product);
 
 app.use(app.router);
 
