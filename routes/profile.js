@@ -13,13 +13,13 @@ exports.profile = function(req, res){
 //Connect Users database
 exports.list = function(req, res){
     req.getConnection(function(err,connection){
-          var query = connection.query('SELECT * FROM users',function(err,rows)
-          { 
-              if(err)
-                  console.log("Error Selecting : %s ",err );
-              res.render('profile',{page_title:"users - Node.js",data:rows});
-           });
-           //console.log(query.sql);
+    var query = connection.query('SELECT * FROM users',function(err,rows)
+        { 
+            if(err)
+                console.log("Error Selecting : %s ",err );
+            res.render('profile',{page_title:"users - Node.js",data:rows});
+        });
+        //console.log(query.sql);
     });
 };
 

@@ -61,8 +61,8 @@ exports.register_data = function(req, res, next){
 
 // Post login data 
 exports.login_data = function(req, res, next){
-    console.log(req.user);
-    console.log(req.isAuthenticated());
+    //console.log(req.user);
+    //console.log(req.isAuthenticated());
     user.login(req.body.username, req.body.password, function(result) {
         if(result) {
             //Store the user data in a session.

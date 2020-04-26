@@ -130,12 +130,14 @@ app.post('/login_data',registerjsfile.login_data);
 //get logout url
 app.get('/logout', registerjsfile.loggout);
 
-//get user url
+//get profile url
 app.get('/profile', profilejsfile.profile);
 app.get('/users/edit/:id',profilejsfile.edit);
 
 //get users url
 app.get('/users', users.list);
+//app.get('/users/add', users.add);
+//app.post('/users/add', users.save);
 app.get('/users/edit/:id', users.edit);
 app.post('/users/edit/:id',users.save_edit);
 app.get('/users/delete/:id', users.delete_user);
