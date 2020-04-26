@@ -38,6 +38,7 @@ var users = require('./routes/users');
 
 //load item route
 var itemjsfile = require('./routes/items');
+
 //load adminorders route
 var adminorders = require('./routes/adminorders');
 
@@ -130,12 +131,14 @@ app.post('/login_data',registerjsfile.login_data);
 //get logout url
 app.get('/logout', registerjsfile.loggout);
 
-//get user url
+//get profile url
 app.get('/profile', profilejsfile.profile);
 app.get('/users/edit/:id',profilejsfile.edit);
 
 //get users url
 app.get('/users', users.list);
+//app.get('/users/add', users.add);
+//app.post('/users/add', users.save);
 app.get('/users/edit/:id', users.edit);
 app.post('/users/edit/:id',users.save_edit);
 app.get('/users/delete/:id', users.delete_user);
@@ -172,7 +175,7 @@ app.get('/adminproducts/add', adminproducts.add);
 app.post('/adminproducts/add', adminproducts.save);
 app.get('/adminproducts/edit/:id', adminproducts.edit);
 app.post('/adminproducts/edit/:id',adminproducts.save_edit);
-//app.get('/adminproducts/delete/:id', adminproducts.delete_user);
+app.get('/adminproducts/delete/:id', adminproducts.delete_product);
 
 //get adminorders url
 app.get('/adminorders', adminorders.list);
