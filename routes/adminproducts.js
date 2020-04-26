@@ -80,14 +80,10 @@ exports.edit = function(req, res){
           
           connection.query("UPDATE products set ? WHERE id = ? ",[data,id], function(err, rows)
           {
-    
             if (err)
                 console.log("Error Updating : %s ",err );
-           
             res.redirect('/adminproducts');
-            
           });
-      
       });
   };
   
