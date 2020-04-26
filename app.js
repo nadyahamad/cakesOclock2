@@ -170,7 +170,7 @@ app.get('/orders', ordersjsfile.orders);
 //get adminproducts url
 app.get('/adminproducts', adminproducts.list);
 app.get('/adminproducts/add', adminproducts.add);
-//app.post('/adminproducts/add', adminproducts.save);
+app.post('/adminproducts/add', adminproducts.save);
 app.get('/adminproducts/edit/:id', adminproducts.edit);
 app.post('/adminproducts/edit/:id',adminproducts.save_edit);
 //app.get('/adminproducts/delete/:id', adminproducts.delete_user);
