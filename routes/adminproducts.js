@@ -74,7 +74,7 @@ exports.edit = function(req, res){
             //from_price   : input.price,
             allergen_info   : input.allergen_info,
             cat_id: input.cat_id,
-            prd_img   : input.prd_img
+            prd_img   : input.prd_img,
           
           };
           
