@@ -1,4 +1,4 @@
-<%- include layouts/header.ejs %>
+<%- include layouts/header2.ejs %>
 <!-- main content -->
 <main class="content-faq">
     <h1 class="bottom-dotted text-center pt-1">Hi <%= name %></h1> 
@@ -39,9 +39,11 @@
                 <div class="card-img">
                     <i class="material-icons card-icon">person</i>
                 </div>
-                <a href="./users" class="btn-card" role="button" aria-pressed="true">
+                <% if(isAuthenticated) { %>
+                <a href="./users/edit/<%=data[i].id%>" class="btn-card" role="button" aria-pressed="true">
                    Manage my Account
                 </a>
+                <% } %>
             </div>
             <div class="product-card">
                 <div class="card-img">
