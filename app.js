@@ -38,8 +38,8 @@ var users = require('./routes/users');
 
 //load item route
 var itemjsfile = require('./routes/items');
-//load orders route
-var ordersjsfile = require('./routes/orders');
+//load adminorders route
+var adminorders = require('./routes/adminorders');
 
 //load checkout route 
 var checkoutjsfile  = require('./routes/checkout');
@@ -174,6 +174,10 @@ app.post('/adminproducts/add', adminproducts.save);
 app.get('/adminproducts/edit/:id', adminproducts.edit);
 app.post('/adminproducts/edit/:id',adminproducts.save_edit);
 //app.get('/adminproducts/delete/:id', adminproducts.delete_user);
+
+//get adminorders url
+app.get('/adminorders', adminorders.list);
+
 
 app.use(app.router);
 
