@@ -122,11 +122,11 @@ app.use(function (req, res, next){
 app.get('/', routes.index);
 //get register url
 app.get('/register', registerjsfile.register);
-app.post('/register_data', registerjsfile.register_data);
+app.post('/register', registerjsfile.register_data);
 
 //get login url
 app.get('/login', registerjsfile.login);
-app.post('/login_data',registerjsfile.login_data);
+app.post('/login',registerjsfile.login_data);
 
 //get logout url
 app.get('/logout', registerjsfile.loggout);
